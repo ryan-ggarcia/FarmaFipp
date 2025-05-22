@@ -4,14 +4,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
-    <link rel='stylesheet'
-        href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-straight/css/uicons-regular-straight.css'>
-    <link rel='stylesheet'
-        href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-straight/css/uicons-regular-straight.css'>
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-thin-rounded/css/uicons-thin-rounded.css'>
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-bold-rounded/css/uicons-bold-rounded.css">
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-straight/css/uicons-regular-straight.css">
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-thin-rounded/css/uicons-thin-rounded.css">
     <link rel="stylesheet" href="style.css">
     <title>Sobre nós</title>
+    <style>
+        /* RESET */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to right, #f1f1f1, #e0f7fa);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #00838f;
+            color: white;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .logo a {
+            color: white;
+            font-size: 1.8rem;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .pesquisa form {
+            display: flex;
+            align-items: center;
+        }
+
+        .pesquisa input[type="search"] {
+            padding: 0.5rem;
+            border: none;
+            border-radius: 4px 0 0 4px;
+            outline: none;
+        }
+
+        .iconPes {
+            background-color: white;
+            color: #00838f;
+            padding: 0.5rem;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+        }
+
+        .link a, .link i {
+            color: white;
+            margin-left: 1rem;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        .carrinho button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        main {
+            padding: 2rem;
+        }
+
+        section {
+            margin-bottom: 2rem;
+            animation: fadeIn 1s ease;
+        }
+
+        .h1 h1 {
+            font-size: 2rem;
+            color: #006064;
+            margin-bottom: 0.5rem;
+        }
+
+        .text p, .text ol, .text {
+            background-color: rgb(73, 127, 171);
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .text ol {
+            padding-left: 1.5rem;
+        }
+
+        .footer {
+            background-color: #004d40;
+            color: white;
+            padding: 2rem;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .footer-box {
+            width: 300px;
+            margin-bottom: 1rem;
+        }
+
+        .footer-box h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-box button {
+            background-color: #00796b;
+            border: none;
+            padding: 0.5rem 1rem;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .footer-bottom {
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .footer-bottom button {
+            margin-top: 0.5rem;
+            padding: 0.5rem 1rem;
+            background-color: #00796b;
+            border: none;
+            color: rgb(10, 28, 144);
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -22,7 +173,6 @@
             </div>
             <div class="pesquisa">
                 <form><input type="search" placeholder="Pesquisar..."><i class="iconPes fi fi-rs-search "></i></form>
-
             </div>
             <div class="link">
                 <i class="fi fi-tr-circle-user"></i><a href="login.html" target="_blank">Login</a>
@@ -33,7 +183,6 @@
                 <button>
                     <i class="fi fi-br-cart-arrow-down"></i>
                 </button>
-
             </div>
         </nav>
     </header>
@@ -41,32 +190,25 @@
     <main id="main-sobre">
         <section>
             <div class="h1">
-                <h1>
-                    Sobre a empresa
-                </h1>
+                <h1>Sobre a empresa</h1>
             </div>
             <div class="text">
                 <p>
-                    A FarmeFipp é uma farmácia online inovadora, dedicando a proporcionar saúde, bem-estar e qualidade
+                    A FarmeFipp é uma farmácia online inovadora, dedicada a proporcionar saúde, bem-estar e qualidade
                     de vida aos nossos clientes por meio de uma plataforma digital segura, acessível e eficiente.
                     Oferecemos uma ampla quantidade de medicamentos, produtos farmacêuticos, cosméticos e itens de
-                    cuidado pessoal, com a conveniência de compras online e entrega rápida. A empresa se destaca pelo
-                    foco na saúde dos clientes e em proporcionar uma experiência de compra fácil, prática e segura, sem
-                    sair de casa.
-
+                    cuidado pessoal, com a conveniência de compras online e entrega rápida.
                 </p>
             </div>
         </section>
         <section>
             <div class="h1">
-                <h1>
-                    Missão
-                </h1>
+                <h1>Missão</h1>
             </div>
             <div class="text">
-                Nossa é oferecer uma experiência de compra online simples, segura e eficaz. Através da nossa plataforma
-                digital, proporcionando produtos farmacêuticos de qualidade, garantindo a satisfação e o cuidado
-                individual de cada cliente, como entregas rápidas e seguras.
+                <p>
+                    Nossa missão é oferecer uma experiência de compra online simples, segura e eficaz. Por meio da nossa plataforma digital, disponibilizamos produtos farmacêuticos de qualidade, garantindo a satisfação e o cuidado individual de cada cliente, com entregas rápidas e seguras.
+                </p>
             </div>
         </section>
         <section>
@@ -74,65 +216,66 @@
                 <h1>Visão</h1>
             </div>
             <div class="text">
-                Ser a farmácia online mais confiável e inovadora, reconhecida pelo atendimento digital, qualidade dos
-                produtos e soluções farmacêuticas, com um compromisso com a saúde e o bem-estar de nossos clientes.
-                Esperamos ser a principal escolha de nossos consumidores para suas necessidades de saúde online,
-                expandindo nossa presença no mercado digital.
+                <p>
+                    Ser a farmácia online mais confiável e inovadora, reconhecida pelo atendimento digital, qualidade dos
+                    produtos e soluções farmacêuticas, com um compromisso com a saúde e o bem-estar de nossos clientes.
+                </p>
             </div>
         </section>
         <section>
             <div class="h1">
-                <h1>
-                    Valores
-                </h1>
+                <h1>Valores</h1>
             </div>
             <div class="text">
                 <ol>
-                    <li>
-                        Comodidade e Acessibilidade;
-                    </li>
-                    <li>
-                        Ética e transparência;
-                    </li>
-                    <li>
-                        Referência no atendimento online;
-                    </li>
-                    <li>
-                        Qualidade e segurança;
-                    </li>
-                    <li>
-                        Responsabilidade;
-                    </li>
-                    <li>
-                        Garantindo a saúde e bem-estar dos clientes;
-                    </li>
+                    <li>Comodidade e acessibilidade</li>
+                    <li>Ética e transparência</li>
+                    <li>Excelência no atendimento online</li>
+                    <li>Qualidade e segurança dos produtos</li>
+                    <li>Responsabilidade social e ambiental</li>
+                    <li>Compromisso com a saúde e o bem-estar dos clientes</li>
                 </ol>
             </div>
         </section>
     </main>
     <footer class="footer">
         <div class="footer-top">
-          <div class="footer-box">
-            <h4><i class="fas fa-headset"></i> Central de Atendimento</h4>
-            <p>Confira as dúvidas mais frequentes ou fale com a gente.</p>
-            <button>
-                <a href="#">Acessar</a>
-            </button>
-          </div>
-          <div class="footer-box">
-            <h4><i class="fas fa-robot"></i> Chatbot Inteligente</h4>
-            <p>Fale com nossa IA para atendimento rápido e automatizado!</p>
-            <button>
-                <a href="#">Acessar</a>
-            </button>
-          </div>
+            <div class="footer-box">
+                <h4><i class="fas fa-headset"></i> Central de Atendimento</h4>
+                <p>Confira as dúvidas mais frequentes ou fale com a gente.</p>
+                <button><a href="#">Acessar</a></button>
+            </div>
+            <div class="footer-box">
+                <h4><i class="fas fa-robot"></i> Chatbot Inteligente</h4>
+                <p>Fale com nossa IA para atendimento rápido e automatizado!</p>
+                <button><a href="#">Acessar</a></button>
+            </div>
         </div>
-      
         <div class="footer-bottom">
-          <p>Desenvolvido Por <strong>RX Coders</strong></p>
-          <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})">Voltar ao topo</button>
+            <p>Desenvolvido Por <strong>RX Coders</strong></p>
+            <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})">Voltar ao topo</button>
         </div>
-      </footer>
+    </footer>
+
+    <script>
+        // Animação ao rolar a página
+        const sections = document.querySelectorAll('section');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeIn 1s ease forwards';
+                }
+            });
+        }, {
+            threshold: 0.2
+        });
+
+        sections.forEach(section => {
+            section.style.opacity = 0;
+            observer.observe(section);
+        });
+    </script>
 </body>
 
 </html>
