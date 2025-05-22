@@ -539,29 +539,7 @@ legend h1 {
     transition: 0.8s;
 }
 
-/* SOBRE CONFIG */
-#main-sobre {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    width: 100%;
-    gap: 20px;
-    justify-content: center;
-}
 
-.h1 {
-    color: var(--secundary-color);
-}
-
-.text {
-    background-color: var(--primary-color);
-    border-radius: 10px;
-    padding: 20px;
-    min-height: 350px;
-    width: 300px;
-    color: white;
-    font-size: 20px;
-}
 
 /* FOOTER CONFIG */
 .footer {
