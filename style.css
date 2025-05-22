@@ -8,214 +8,119 @@
 
 body {
     font-family: 'trebuchet MS';
-    height: 100vh;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-
-#header-index {
-    height: 100px;
-    width: 100%;
-    background-color: var(--azul);
-}
-legend{
-    font-size: 1.5rem;
-    text-align: center;
-    font-weight: bold;
-}
-nav {
+.header-index{
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
-    text-align: center;
-    color: var(--secundary-color);
+    justify-content: space-around;
     align-items: center;
-    padding: 10px;
-}
-
-.logo {
-    font-size: 35px;
-    cursor: pointer;
+    height: 80px;
+    width: 100%;
+    z-index: 5;
+    border-bottom: var(--primary-color) 1px solid;
 }
 .logo a{
-    color: var(--secundary-color);
+    font-size: 2rem;
+    font-weight: 800;
+    cursor: pointer;
     text-decoration: none;
+    color: var(--secundary-color);
 }
-.link {
+
+nav{
     display: flex;
     flex-direction: row;
-    gap: 15px;
-}
+    gap: 4rem;
+    align-items: center;
 
-.link a {
-    text-decoration: none;
-    color: white;
-    font-size: 20px;
-    transition: all 0.10s ease;
-    margin-right: 5px;
 }
-
-.link a:hover {
-    text-decoration: underline;
+.pesquisa{
+    display: flex;
+    align-items: center;
 }
-
-.link i {
-    color: white;
-    font-size: 20px;
-}
-
-.pesquisa input {
-    padding: 10px;
-    height: 50px;
-    width: 500px;
+.pesquisa input{
+    height: 40px;
+    width: 450px;
+    border-radius: 20px;
     border: none;
-    border-radius: 25px;
+    background-color: #eee;
     outline: none;
 }
-
-.pesquisa input::placeholder {
-    font-size: 15px;
+.pesquisa input:focus{
+    background-color: #d3d3d3;
+    border: #666 1px solid;
 }
-
-.iconPes {
-    position: relative;
-    top: 3px;
-    right: 30px;
-    z-index: 2;
-}
-
-.carrinho{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    cursor: pointer;
-    padding: 10px;
-    text-align: center;
-    transition: all 0.2s ease-in;
-    border-radius: 40px;
-}
-.carrinho:hover{
-    background-color: var(--primary-color);
-    border-radius: 40px;
-    border: none;
-}
-.carrinho button{
-    border: none;
-    background: transparent;
-    color: white;
-    font-size: 30px;
-    cursor: pointer;
-}
-
-.carrinho p{
-    color: white;
-}
-.carroceu{
-    margin-top: 20px;
-    overflow: hidden;
-    width: 95vw;
-    height: 80vh;
-}
-.imgC img{
-    width: 1088px;
-    height: 478px;
-}
-.imgC{
-    opacity: 0;
-    display: flex;
-    justify-content: center;
-    left: 50%;
-    transform: translate(-50%);
-    position: absolute;
-    z-index: 2;
-
-    /* ANIMAÇÃO */
-    transition: opacity 0.6s ease-in;
-}
-.ativa{
-    opacity: 1;
-}
-.slides{
-    position: absolute;
-    top: 80%;
-    left: 50%;
-    transform: translate(-50%);
-    display: flex;
-    flex-direction: row;
-    gap: 5px;
-}
-.slide{
-    padding: 5px 20px;
-    border-radius: 10px;
-    background-color:#999;
-}
-.ativar{
-    background-color: #666;
-}
-.produtos {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 20px;
-}
-
-.caixa {
-    height: 350px;
-    width: 250px;
-    border: solid var(--button-color) 1px;
-    border-radius: 20px;
-    cursor: pointer;
-}
-
-.caixa:hover {
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-.config-props{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-evenly;
-    padding: 20px;
-}
-.img-produto {
-    display: flex;
-    background-color: var(--button-color);
-    flex-wrap: nowrap;
-    border-radius: 20px 20px 0px 0px;
-}
-
-.img-produto img {
-    height: 150px;
-    width: 100px;
-    margin-left: 10px;
-    margin-top: 5px;
-}
-
-.caixaText {
-    margin-left: 10px;
-}
-
-.textProd {
-    color: var(--textProd);
+nav a{
+    text-decoration: none;
+    color: var(--secundary-color);
     font-size: 20px;
+    cursor: pointer;
+    position: relative;
+}
+nav a::after{
+    content: '';
+    position: absolute;
+    top: 1;
+    left: 0;
+    bottom: 0;
+    width: 0px;
+    height: 2px;
+    background-color: var(--secundary-color);
+    transition: width 0.6s ease;
+}
+nav a:hover::after{
+    width: 100px;
 }
 
-.textPreco {
-    font-size: 25px;
+.btn-carrinho{
+    padding: 20px ;
+    border-radius: 20px;
+    border: none;
+    background-color: #eee;
+    transition: background-color ease 0.1s;
 }
-.arrows{
-    position:absolute;
-    height: 90vh;
-    width: 80vw;
+.btn-carrinho:hover{
+    background-color: #ddd;
+}
+.main-index{
     display: flex;
-    justify-content: space-evenly;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    z-index: 3;
+    flex-direction: column;
+    align-items: center;
+    min-height: 80vh;
+    padding: 15px;
 }
+
+.conteiner-info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+}
+.info{
+    background-color: #90e0ef;
+    height: 75px;
+    width: 150px;
+    text-align: center;
+    border-radius: 20px;
+    color: #023e8a;
+    transition: background-color 0.1s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: nowrap;
+
+}
+.info:hover{
+    background-color: #48cae4;
+}
+.info i{
+    font-size: 30px;
+}
+
 /* login config */
 
 header h1 {
@@ -615,7 +520,7 @@ legend h1 {
     height: 40px;
     width: 200px;
     font-size: 15px;
-    transition: transform 0.2s ease-in;
+    transition: transform 0.4s ease-in;
 }
 
 .footer-box button:hover{
