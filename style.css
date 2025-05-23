@@ -104,6 +104,7 @@ nav a:hover::after {
     align-items: center;
     min-height: 80vh;
     padding: 15px;
+    background: linear-gradient(to right, #e3f2fd, #fce4ec);
 }
 
 .conteiner-info {
