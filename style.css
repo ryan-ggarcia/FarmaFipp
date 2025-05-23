@@ -162,6 +162,7 @@ nav a:hover::after {
     height: 400px;
     width: 300px;
     transition: all 0.2s ease;
+    background-color: white;
 }
 
 .prod:hover {
