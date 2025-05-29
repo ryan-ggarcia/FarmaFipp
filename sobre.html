@@ -4,12 +4,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-bold-rounded/css/uicons-bold-rounded.css">
-  <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-straight/css/uicons-regular-straight.css">
-  <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-thin-rounded/css/uicons-thin-rounded.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+
   <title>Sobre nós - FarmaFipp</title>
   <style>
+    :root {
+    --primary-color: #1E2EDE;
+    --azul: #00bbf9;
+    --secundary-color: #ee0000;
+    --button-color: #d3d3d3;
+    --textProd: #505050;
+}
     * {
       margin: 0;
       padding: 0;
@@ -17,86 +28,105 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
-    body {
-      background: linear-gradient(to right, #e3f2fd, #fce4ec);
-      color: #333;
-      line-height: 1.6;
-      scroll-behavior: smooth;
-    }
+body {
+    font-family: 'trebuchet MS';
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+     background: linear-gradient(to right,#e3f2fd,#fce4ec);
+}
 
-    header {
-      background: white;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
+#header-index{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+    z-index: 5;
+    background-color: #fff;
+}
 
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      flex-wrap: wrap;
-      max-width: 1200px;
-      margin: auto;
-    }
+.logo a {
+    font-size: 2rem;
+    font-weight: 800;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--secundary-color);
+}
 
-    .logo a {
-      color: #00838f;
-      font-size: 2rem;
-      font-weight: bold;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
+nav {
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
+    align-items: center;
+    text-align: center;
+    margin-top: 15px;
+}
 
-    .logo a:hover {
-      color: #006064;
-    }
+.pesquisa {
+    display: flex;
+    align-items: center;
+}
 
-    .pesquisa input[type="search"] {
-      padding: 0.6rem;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      outline: none;
-    }
+.pesquisa input {
+    height: 40px;
+    width: 450px;
+    border-radius: 20px;
+    border: none;
+    background-color: #eee;
+    outline: none;
+}
 
-    .iconPes {
-      margin-left: -2rem;
-      cursor: pointer;
-      color: #00838f;
-    }
+.pesquisa input:focus {
+    background-color: #d3d3d3;
+    border: #666 1px solid;
+}
 
-    .link a, .link i {
-      margin-left: 1rem;
-      color: #333;
-      text-decoration: none;
-      font-size: 1rem;
-      transition: color 0.3s;
-    }
+nav a {
+    text-decoration: none;
+    color: var(--secundary-color);
+    font-size: 20px;
+    cursor: pointer;
+    position: relative;
+}
 
-    .link a:hover, .link i:hover {
-      color: #00838f;
-    }
+nav a::after {
+    content: '';
+    position: absolute;
+    top: 1;
+    left: 0;
+    bottom: 0;
+    width: 0px;
+    height: 2px;
+    background-color: var(--secundary-color);
+    transition: width 0.6s ease;
+}
 
-    .carrinho button {
-      background: #00838f;
-      border: none;
-      padding: 0.5rem;
-      border-radius: 8px;
-      color: white;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
+nav a:hover::after {
+    width: 100px;
+}
 
-    .carrinho button:hover {
-      background: #006064;
-    }
+.btn-carrinho {
+    padding: 20px 25px;
+    border-radius: 30px;
+    border: none;
+    background-color: #eee;
+    transition: background-color ease 0.1s;
+}
+.btn-carrinho i{
+    font-size: 20px;
+    color: var(--secundary-color);
+}
+.btn-carrinho:hover {
+    background-color: #ddd;
+}
 
     main {
       padding: 3rem 2rem;
       max-width: 1000px;
       margin: auto;
+     
     }
 
     section {
@@ -113,7 +143,7 @@
 
     .h1 h1 {
       font-size: 2.2rem;
-      color: #006064;
+      color: #ee0000;
       margin-bottom: 1rem;
     }
 
@@ -195,21 +225,28 @@
       <div class="logo">
         <a href="index.html">FarmaFipp</a>
       </div>
-      <div class="pesquisa">
-        <form id="form-pesquisa">
-          <input type="search" placeholder="Pesquisar..." id="campo-pesquisa">
-          <i class="iconPes fi fi-rs-search"></i>
-        </form>
-      </div>
-      <div class="link">
-        <i class="fi fi-tr-circle-user"></i><a href="login.html" target="_blank">Login</a>
-        <i class="fi fi-rs-enter"></i><a href="cad.html" target="_blank">Cadastre-se</a>
-        <a href="sobre.html">Sobre nós</a>
-      </div>
-      <div class="carrinho">
-        <button><i class="fi fi-br-cart-arrow-down"></i></button>
-      </div>
-    </nav>
+      <nav>
+            <div class="pesquisa">
+                <input type="search" placeholder="O que você busca ?">
+                <div class="icon-search">
+
+                </div>
+            </div>
+            <div class="btn-link">
+                <a href="login.html"><i class="fi fi-sr-user"></i> Entrar</a>
+            </div>
+            <div class="btn-link">
+                <a href="cadastro.html"><i class="fi fi-sr-user-add"></i> Cadastrar</a>
+            </div>
+            <div class="btn-link">
+                <a href="sobre.html"><i class="fi fi-br-info"></i>Sobre nos</a>
+            </div>
+            <div class="bnt-link">
+                <button class="btn-carrinho">
+                    <i class="fi fi-sr-shopping-basket"></i>
+                </button>
+            </div>
+        </nav>
   </header>
 
   <main id="main-sobre">
