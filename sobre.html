@@ -4,129 +4,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel='stylesheet'
-        href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
-    <link rel='stylesheet'
-        href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
-    <link rel='stylesheet'
-        href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+  <link rel="stylesheet" href="style.css">
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
 
   <title>Sobre nós - FarmaFipp</title>
   <style>
     :root {
-    --primary-color: #1E2EDE;
-    --azul: #00bbf9;
-    --secundary-color: #ee0000;
-    --button-color: #d3d3d3;
-    --textProd: #505050;
-}
+      --primary-color: #1E2EDE;
+      --azul: #00bbf9;
+      --secundary-color: #ee0000;
+      --button-color: #d3d3d3;
+      --textProd: #505050;
+    }
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
-body {
-    font-family: 'trebuchet MS';
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-     background: linear-gradient(to right,#e3f2fd,#fce4ec);
-}
-
-#header-index{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    height: 100px;
-    width: 100%;
-    z-index: 5;
-    background-color: #fff;
-}
-
-.logo a {
-    font-size: 2rem;
-    font-weight: 800;
-    cursor: pointer;
-    text-decoration: none;
-    color: var(--secundary-color);
-}
-
-nav {
-    display: flex;
-    flex-direction: row;
-    gap: 4rem;
-    align-items: center;
-    text-align: center;
-    margin-top: 15px;
-}
-
-.pesquisa {
-    display: flex;
-    align-items: center;
-}
-
-.pesquisa input {
-    height: 40px;
-    width: 450px;
-    border-radius: 20px;
-    border: none;
-    background-color: #eee;
-    outline: none;
-}
-
-.pesquisa input:focus {
-    background-color: #d3d3d3;
-    border: #666 1px solid;
-}
-
-nav a {
-    text-decoration: none;
-    color: var(--secundary-color);
-    font-size: 20px;
-    cursor: pointer;
-    position: relative;
-}
-
-nav a::after {
-    content: '';
-    position: absolute;
-    top: 1;
-    left: 0;
-    bottom: 0;
-    width: 0px;
-    height: 2px;
-    background-color: var(--secundary-color);
-    transition: width 0.6s ease;
-}
-
-nav a:hover::after {
-    width: 100px;
-}
-
-.btn-carrinho {
-    padding: 20px 25px;
-    border-radius: 30px;
-    border: none;
-    background-color: #eee;
-    transition: background-color ease 0.1s;
-}
-.btn-carrinho i{
-    font-size: 20px;
-    color: var(--secundary-color);
-}
-.btn-carrinho:hover {
-    background-color: #ddd;
-}
+    body {
+      font-family: 'trebuchet MS';
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #e3f2fd, #fce4ec);
+    }
 
     main {
       padding: 3rem 2rem;
       max-width: 1000px;
       margin: auto;
-     
+
     }
 
     section {
@@ -211,6 +123,7 @@ nav a:hover::after {
         opacity: 0;
         transform: translateY(20px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
@@ -220,12 +133,12 @@ nav a:hover::after {
 </head>
 
 <body>
-  <header id="header-index">
-    <nav>
-      <div class="logo">
-        <a href="index.html">FarmaFipp</a>
-      </div>
-      <nav>
+   <header class="header-index">
+        <div class="logo">
+            <a href="index.html">FarmaFipp</a>
+        </div>
+
+        <nav>
             <div class="pesquisa">
                 <input type="search" placeholder="O que você busca ?">
                 <div class="icon-search">
@@ -247,7 +160,7 @@ nav a:hover::after {
                 </button>
             </div>
         </nav>
-  </header>
+    </header>
 
   <main id="main-sobre">
     <section>
@@ -256,7 +169,9 @@ nav a:hover::after {
       </div>
       <div class="text">
         <p>
-          A FarmeFipp é uma farmácia online inovadora, dedicada a proporcionar saúde, bem-estar e qualidade de vida aos nossos clientes por meio de uma plataforma digital segura, acessível e eficiente. Oferecemos uma ampla variedade de medicamentos, cosméticos e produtos de cuidado pessoal, com conveniência e entrega rápida.
+          A FarmeFipp é uma farmácia online inovadora, dedicada a proporcionar saúde, bem-estar e qualidade de vida aos
+          nossos clientes por meio de uma plataforma digital segura, acessível e eficiente. Oferecemos uma ampla
+          variedade de medicamentos, cosméticos e produtos de cuidado pessoal, com conveniência e entrega rápida.
         </p>
       </div>
     </section>
@@ -265,7 +180,8 @@ nav a:hover::after {
         <h1>Missão</h1>
       </div>
       <div class="text">
-        Nossa missão é oferecer uma experiência de compra online simples, segura e eficaz. Através da nossa plataforma digital, proporcionamos produtos farmacêuticos de qualidade, com entregas rápidas e cuidado individualizado.
+        Nossa missão é oferecer uma experiência de compra online simples, segura e eficaz. Através da nossa plataforma
+        digital, proporcionamos produtos farmacêuticos de qualidade, com entregas rápidas e cuidado individualizado.
       </div>
     </section>
     <section>
@@ -273,7 +189,8 @@ nav a:hover::after {
         <h1>Visão</h1>
       </div>
       <div class="text">
-        Ser a farmácia online mais confiável e inovadora, reconhecida pelo atendimento digital, qualidade dos produtos e soluções farmacêuticas, com compromisso com a saúde e o bem-estar de nossos clientes.
+        Ser a farmácia online mais confiável e inovadora, reconhecida pelo atendimento digital, qualidade dos produtos e
+        soluções farmacêuticas, com compromisso com a saúde e o bem-estar de nossos clientes.
       </div>
     </section>
     <section>
