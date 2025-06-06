@@ -22,6 +22,10 @@
     <link rel='stylesheet'
         href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+     <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/2.6.0/uicons-bold-straight/css/uicons-bold-straight.css'>
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-straight/css/uicons-regular-straight.css'>
 
     <link rel="stylesheet" href="style.css">
     <title>FarmaFipp</title>
@@ -87,14 +91,27 @@
         </div>
 
         <div class="ctn-carroceu">
-            <div class="img-prod">
-
+            <div class="img-prod ativa">
+                <img src="./img/prod01.jpeg" >
             </div>
             <div class="img-prod">
-
+                <img src="./img/prod02.jpeg" >
             </div>
             <div class="img-prod">
-
+                <img src="./img/prod03.jpeg" >
+            </div>
+            <div class="ctn-slide">
+                <div class="slide ativar"></div>
+                <div class="slide"></div>
+                <div class="slide"></div>
+            </div>
+            <div class="ctn-arrows">
+                <button class="btn-arrows" id="prev">
+                    <i class="fi fi-rs-caret-left"></i>
+                </button>
+                <button class="btn-arrows" id="next">
+                     <i class="fi fi-bs-caret-right"></i>
+                </button>
             </div>
         </div>
 
@@ -228,10 +245,11 @@
         </div>
 
         <div class="footer-bottom">
-            <p>Desenvolvido Por <span>RX Coders</span></p>
+            <p>Desenvolvido Por <span>RX CODERS</span></p>
             <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})">Voltar ao topo</button>
         </div>
     </footer>
+    <script src="./script.js"></script>
 </body>
 
 </html>
