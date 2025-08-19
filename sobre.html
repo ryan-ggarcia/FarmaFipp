@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+
+  <title>Sobre nós - FarmaFipp</title>
+  <style>
+    :root {
+      --primary-color: #1E2EDE;
+      --azul: #00bbf9;
+      --secundary-color: #ee0000;
+      --button-color: #d3d3d3;
+      --textProd: #505050;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'trebuchet MS';
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #e3f2fd, #fce4ec);
+    }
+
+    main {
+      padding: 3rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+
+    }
+
+    section {
+      margin-bottom: 3rem;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+
+    section.reveal {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .h1 h1 {
+      font-size: 2.2rem;
+      color: #ee0000;
+      margin-bottom: 1rem;
+    }
+
+    .text {
+      background-color: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      animation: fadeUp 1s ease forwards;
+    }
+
+    .text ol {
+      padding-left: 1.5rem;
+    }
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+   <header class="header-index">
+        <div class="logo">
+            <a href="index.html">FarmaFipp</a>
+        </div>
+
+        <nav>
+            <div class="pesquisa">
+                <input type="search" placeholder="O que você busca ?">
+                <div class="icon-search">
+
+                </div>
+            </div>
+            <div class="btn-link">
+                <a href="login.html"><i class="fi fi-sr-user"></i> Entrar</a>
+            </div>
+            <div class="btn-link">
+                <a href="cadastro.html"><i class="fi fi-sr-user-add"></i> Cadastrar</a>
+            </div>
+            <div class="btn-link">
+                <a href="sobre.html"><i class="fi fi-br-info"></i>Sobre nos</a>
+            </div>
+            <div class="bnt-link">
+                <button class="btn-carrinho">
+                    <i class="fi fi-sr-shopping-basket"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+  <main id="main-sobre">
+    <section>
+      <div class="h1">
+        <h1>Sobre a empresa</h1>
+      </div>
+      <div class="text">
+        <p>
+          A FarmeFipp é uma farmácia online inovadora, dedicada a proporcionar saúde, bem-estar e qualidade de vida aos
+          nossos clientes por meio de uma plataforma digital segura, acessível e eficiente. Oferecemos uma ampla
+          variedade de medicamentos, cosméticos e produtos de cuidado pessoal, com conveniência e entrega rápida.
+        </p>
+      </div>
+    </section>
+    <section>
+      <div class="h1">
+        <h1>Missão</h1>
+      </div>
+      <div class="text">
+        Nossa missão é oferecer uma experiência de compra online simples, segura e eficaz. Através da nossa plataforma
+        digital, proporcionamos produtos farmacêuticos de qualidade, com entregas rápidas e cuidado individualizado.
+      </div>
+    </section>
+    <section>
+      <div class="h1">
+        <h1>Visão</h1>
+      </div>
+      <div class="text">
+        Ser a farmácia online mais confiável e inovadora, reconhecida pelo atendimento digital, qualidade dos produtos e
+        soluções farmacêuticas, com compromisso com a saúde e o bem-estar de nossos clientes.
+      </div>
+    </section>
+    <section>
+      <div class="h1">
+        <h1>Valores</h1>
+      </div>
+      <div class="text">
+        <ol>
+          <li>Comodidade e acessibilidade</li>
+          <li>Ética e transparência</li>
+          <li>Excelência no atendimento online</li>
+          <li>Qualidade e segurança dos produtos</li>
+          <li>Responsabilidade social e ambiental</li>
+          <li>Compromisso com o bem-estar dos clientes</li>
+        </ol>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-box">
+        <h4><i class="fas fa-headset"></i> Central de Atendimento</h4>
+        <p>Confira as dúvidas mais frequentes ou fale com a gente.</p>
+        <button><a href="#">Acessar</a></button>
+      </div>
+      <div class="footer-box">
+        <h4><i class="fas fa-robot"></i> Chatbot Inteligente</h4>
+        <p>Fale com nossa IA para atendimento rápido e automatizado!</p>
+        <button><a href="#">Acessar</a></button>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Desenvolvido Por <span>RX CODERS</span></p>
+      <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})">Voltar ao topo</button>
+    </div>
+  </footer>
+
+  <script>
+    // Animação de seções ao rolar
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('reveal');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('section').forEach(section => observer.observe(section));
+
+    // Validação do campo de pesquisa
+    document.getElementById('form-pesquisa').addEventListener('submit', function (e) {
+      const campo = document.getElementById('campo-pesquisa');
+      if (campo.value.trim() === '') {
+        e.preventDefault();
+        alert('Digite algo para pesquisar.');
+      }
+    });
+  </script>
+</body>
+
+</html>
