@@ -38,48 +38,51 @@
 </head>
 
 <body>
-
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">Navbar</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Dropdown
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-                        </li>
-                    </ul>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
-                </div>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <!-- LOGO -->
+          <a class="logo navbar-brand" href="index.html">FarmaFipp</a>
+      
+          <!-- BOTÃO TOGGLER PARA MOBILE -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+      
+          <!-- CONTEÚDO COLAPSÁVEL -->
+          <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+      
+            <!-- LINKS COM SPACE BETWEEN -->
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 w-100 d-flex justify-content-between">
+              <li class="nav-item">
+                <a class="nav-link active" href="login.html">Login</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="cadastro.html">Cadastre-se</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="sobre.html">Sobre</a>
+              </li>
+            </ul>
+      
+            <!-- BOTÃO CARRINHO -->
+            <div class="d-flex">
+              <button class="btn btn-outline-secondary">
+                <i class="fi fi-sr-shopping-basket"></i>
+              </button>
             </div>
-        </nav>
+          </div>
+      
+          <!-- BARRA DE PESQUISA CENTRALIZADA FORA DO MENU COLAPSÁVEL -->
+          <div class="d-none d-lg-flex mx-auto">
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+      
 
     <main class="main-index">
         <div class="conteiner-info">
