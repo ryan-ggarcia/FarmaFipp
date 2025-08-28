@@ -32,13 +32,13 @@ body {
     text-decoration: none;
     color: var(--secundary-color) !important;
 }
-
 .nav-item a {
     text-decoration: none;
     color: var(--secundary-color);
     font-size: 20px;
     cursor: pointer;
     position: relative;
+    color: var(--secundary-color) !important;
 }
 
 .nav-item a::after {
@@ -54,13 +54,7 @@ body {
 }
 
 .nav-item a:hover::after {
-    width: 100px;
-}
-
-
-.pesquisa {
-    display: flex;
-    align-items: center;
+    width: 100%;
 }
 
 .pesquisa input {
@@ -109,8 +103,11 @@ body {
     flex-direction: row;
     justify-content: space-evenly;
     width: 100%;
+    overflow-x: auto; /* permite rolagem horizontal */
+    scroll-snap-type: x mandatory; /* snap para "grudar" nos itens */
+    -webkit-overflow-scrolling: touch; /* rolagem suave em mobile */
 }
-
+/* Reajuste em div de itens */
 .info {
     background-color: #90e0ef;
     height: 75px;
@@ -124,7 +121,8 @@ body {
     flex-direction: column;
     justify-content: center;
     flex-wrap: nowrap;
-
+    flex: 0 0 auto; /* mantém o item sem encolher */
+    scroll-snap-align: start; /* ajuda no snap */
 }
 
 .info:hover {
@@ -151,8 +149,8 @@ body {
 }
 
 .img-prod img {
-    height: 70vh;
-    width: 80vw;
+    height: 50%;
+    width: 100%;
     border-radius: 18px;
     transform: translateX(400px);
     opacity: 0;
