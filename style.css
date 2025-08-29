@@ -5,7 +5,6 @@
     --button-color: #d3d3d3;
     --textProd: #505050;
 }
-
 body {
     font-family: 'trebuchet MS';
     box-sizing: border-box;
@@ -106,6 +105,8 @@ body {
     overflow-x: auto; /* permite rolagem horizontal */
     scroll-snap-type: x mandatory; /* snap para "grudar" nos itens */
     -webkit-overflow-scrolling: touch; /* rolagem suave em mobile */
+    scrollbar-color: var(--azul);
+    gap: 4px ;
 }
 /* Reajuste em div de itens */
 .info {
