@@ -33,19 +33,29 @@
         </div>
         <div class="col-md-6">
           <label for="email" class="form-label">E-mail</label>
-          <input type="email" class="form-control" id="email" required>
+          <input type="text" class="form-control" id="email" required>
         </div>
+       
         <div class="col-md-6">
           <label for="cpf" class="form-label">CPF</label>
-          <input type="text" class="form-control" id="cpf" placeholder="000.000.000-00" required>
+          <input type="text" class="form-control" id="cpf" placeholder="000.000.000-00" onkeypress="mascara('###.###.###-##', this, event, true)">
         </div>
         <div class="col-md-6">
           <label for="celular" class="form-label">Celular</label>
-          <input type="tel" class="form-control" id="celular" placeholder="(00) 00000-0000" required>
+          <input type="text" class="form-control" id="celular" placeholder="(00) 00000-0000" onkeypress="mascara('(##) #####-####', this, event, true)">
         </div>
+       
         <div class="col-md-6">
           <label for="nascimento" class="form-label">Data de Nascimento</label>
           <input type="text" class="form-control" id="nascimento" placeholder="dd/mm/aaaa" required>
+        </div>
+        <div class="col-md-6">
+          <label for="cep" class="form-label">CEP</label>
+          <input type="text" class="form-control" id="cep" placeholder="00000-000" onkeypress="mascara('#####-###', this, event, true)" required>
+        </div>
+        <div class="col-md-6">
+          <label for="rg" class="form-label">RG</label>
+          <input type="text" class="form-control" id="rg" placeholder="00.000.000-0" onkeypress="mascara('##.###.###-#', this, event, true)" required>
         </div>
         <div class="col-md-6">
           <label class="form-label">Gênero</label><br>
@@ -58,6 +68,7 @@
             <label class="form-check-label" for="feminino">Feminino</label>
           </div>
         </div>
+        
         <div class="col-md-6">
           <label for="senha" class="form-label">Senha</label>
           <input type="password" class="form-control" id="senha" required>
@@ -76,59 +87,6 @@
   </div>
 
   <!-- JS - Máscaras e validação -->
-  <script>
-    // Máscaras simples para CPF, celular e data
-    document.getElementById("cpf").addEventListener("input", function () {
-      this.value = this.value.replace(/\D/g, "")
-        .replace(/(\d{3})(\d)/, "$1.$2")
-        .replace(/(\d{3})(\d)/, "$1.$2")
-        .replace(/(\d{3})(\d{1,2})$/, "$1-$2");
-    });
-
-    document.getElementById("celular").addEventListener("input", function () {
-      this.value = this.value.replace(/\D/g, "")
-        .replace(/(\d{2})(\d)/, "($1) $2")
-        .replace(/(\d{5})(\d)/, "$1-$2")
-        .slice(0, 15);
-    });
-
-    document.getElementById("nascimento").addEventListener("input", function () {
-      this.value = this.value.replace(/\D/g, "")
-        .replace(/(\d{2})(\d)/, "$1/$2")
-        .replace(/(\d{2})(\d)/, "$1/$2")
-        .slice(0, 10);
-    });
-
-    // Redireciona para login
-    function redirectToLogin() {
-      window.location.href = "login.html";
-    }
-
-    // Validação
-    document.getElementById("formCadastro").addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      const nome = document.getElementById("nome").value.trim();
-      const email = document.getElementById("email").value.trim();
-      const cpf = document.getElementById("cpf").value.trim();
-      const celular = document.getElementById("celular").value.trim();
-      const nascimento = document.getElementById("nascimento").value.trim();
-      const senha = document.getElementById("senha").value;
-      const confirmar = document.getElementById("confirmar").value;
-
-      if (!nome || !email || !cpf || !celular || !nascimento || !senha || !confirmar) {
-        Swal.fire("Atenção", "Por favor, preencha todos os campos!", "warning");
-        return;
-      }
-
-      if (senha !== confirmar) {
-        Swal.fire("Erro", "As senhas não coincidem!", "error");
-        return;
-      }
-
-      Swal.fire("Sucesso!", "Cadastro realizado com sucesso!", "success");
-      // Aqui você pode enviar os dados com fetch/AJAX
-    });
-  </script>
+  <script src="valida.js"></script>
 </body>
 </html>

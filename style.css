@@ -12,6 +12,34 @@ body {
     padding: 0;
 }
 
+/* Correção/estilo padrão para inputs (inclui .form-control do Bootstrap) */
+input,
+textarea,
+select,
+.form-control {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.375rem;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+/* Estado de foco */
+input:focus,
+textarea:focus,
+select:focus,
+.form-control:focus {
+  outline: none;
+  border-color: #86b7fe;
+  box-shadow: 0 0 0 .25rem rgba(13,110,253,.25);
+}
+
 .header-index {
     display: flex;
     flex-direction: row;
