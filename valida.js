@@ -2,6 +2,11 @@ const vEmail = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
 const vSenha = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]{6,12}$/
 const vNome = /^[A-Za-zÀ-ÖØ-öø-ÿ]+(?:[ '-][A-Za-zÀ-ÖØ-öø-ÿ]+)+$/;
 const vCpf = /^(?!00000000000|11111111111|22222222222|33333333333|44444444444|55555555555|66666666666|77777777777|88888888888|99999999999)\d{11}$/;
+const vCll = /^\([1-9][0-9]\)\s?9[0-9]{4}-[0-9]{4}$/;
+const vDate = /^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/([12][0-9]{3})$/;
+const vCep = /^\d{5}-\d{3}$/;
+const vRg = /^\d{2}(\.\d{3}){2}-?\d{1}$/
+
 var validacao = true;
 var corCompleta = "#99ff8f"
 var corIncompleta = "#eff70b"
@@ -33,18 +38,60 @@ function validaEmail(email) {
 		email.style.backgroundColor = corCompleta;
 	}
 }
-function validaSenha(senha) {
-	if (senha.value == "" || !vSenha.test(senha.value)) {
+function validaNascimento(d) {
+	if (d.value == "" || !vDate.test(d.value)) {
 		Swal.fire({
 			icon: "error",
 			title: "ERRO",
-			text: "Senha inválida!",
-			footer: 'A senha deve conter entre 6 e 12 caracteres, incluindo letras e números.'
+			text: "A data de nascimento esta invalido!",
+			footer: 'Verifique se todos os números estão corretos.'
 		});
 		validacao = false;
-		senha.style.backgroundColor = "red";
+		d.style.backgroundColor = "red";
 	}else {
-		senha.style.backgroundColor = corCompleta;
+		d.style.backgroundColor = corCompleta;
+	}
+}
+function validaCep(cep) {
+	if (cep.value == "" || !vCep.test(cep.value)) {
+		Swal.fire({
+			icon: "error",
+			title: "ERRO",
+			text: "O cep digitado esta invalido!",
+			footer: 'Verifique se todos os números estão corretos.'
+		});
+		validacao = false;
+		cep.style.backgroundColor = "red";
+	}else {
+		cep.style.backgroundColor = corCompleta;
+	}
+}
+function validaCelular(cll) {
+	if (cll.value == "" || !vCll.test(cll.value)) {
+		Swal.fire({
+			icon: "error",
+			title: "ERRO",
+			text: "Número de Telefone invalido!",
+			footer: 'Verifique se todos os números estão corretos.'
+		});
+		validacao = false;
+		cll.style.backgroundColor = "red";
+	}else {
+		cll.style.backgroundColor = corCompleta;
+	}
+}
+function validaRg(rg) {
+	if (rg.value == "" || !vRg.test(rg.value)) {
+		Swal.fire({
+			icon: "error",
+			title: "ERRO",
+			text: "O rg digitado esta incorreto!",
+			footer: 'Verifique se todos os números estão corretos.'
+		});
+		validacao = false;
+		rg.style.backgroundColor = "red";
+	}else {
+		rg.style.backgroundColor = corCompleta;
 	}
 }
 function validaCpf(cpf) {
@@ -82,9 +129,15 @@ function validaSenha(senha, confirmar) {
 		});
 		validacao = false;
 		senha.style.backgroundColor = "red";
-	}else{
-		senha.style.backgroundColor = corCompleta;
 	}
+	if(senha.value == confirmar.value){
+		senha.style.backgroundColor = corCompleta;
+		confirmar.style.backgroundColor = corCompleta;
+	}
+}
+
+function enviarForm(s,sc){
+	
 }
 
 function ResetCampos() {
