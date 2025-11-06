@@ -20,7 +20,7 @@ function validaNome(nome) {
 		});
 		validacao = false;
 		nome.style.backgroundColor = "red";
-	}else {
+	} else {
 		nome.style.backgroundColor = corCompleta;
 	}
 }
@@ -34,7 +34,7 @@ function validaEmail(email) {
 		});
 		validacao = false;
 		email.style.backgroundColor = "red";
-	}else {
+	} else {
 		email.style.backgroundColor = corCompleta;
 	}
 }
@@ -48,7 +48,7 @@ function validaNascimento(d) {
 		});
 		validacao = false;
 		d.style.backgroundColor = "red";
-	}else {
+	} else {
 		d.style.backgroundColor = corCompleta;
 	}
 }
@@ -62,7 +62,7 @@ function validaCep(cep) {
 		});
 		validacao = false;
 		cep.style.backgroundColor = "red";
-	}else {
+	} else {
 		cep.style.backgroundColor = corCompleta;
 	}
 }
@@ -76,7 +76,7 @@ function validaCelular(cll) {
 		});
 		validacao = false;
 		cll.style.backgroundColor = "red";
-	}else {
+	} else {
 		cll.style.backgroundColor = corCompleta;
 	}
 }
@@ -90,21 +90,23 @@ function validaRg(rg) {
 		});
 		validacao = false;
 		rg.style.backgroundColor = "red";
-	}else {
+	} else {
 		rg.style.backgroundColor = corCompleta;
 	}
 }
 function validaCpf(cpf) {
-	if (cpf.value == "" || !vCpf.test(cpf.value)) {
+	// remove formatação antes de validar
+	const raw = (cpf.value || "").replace(/\D/g, "");
+	if (raw == "" || !vCpf.test(raw)) {
 		Swal.fire({
 			icon: "error",
 			title: "ERRO",
 			text: "CPF inválido!",
-			footer: 'O CPF deve estar no formato correto.'
+			footer: 'O CPF deve conter 11 dígitos.'
 		});
 		validacao = false;
 		cpf.style.backgroundColor = "red";
-	}else {
+	} else {
 		cpf.style.backgroundColor = corCompleta;
 	}
 }
@@ -130,14 +132,43 @@ function validaSenha(senha, confirmar) {
 		validacao = false;
 		senha.style.backgroundColor = "red";
 	}
-	if(senha.value == confirmar.value){
+	if (senha.value == confirmar.value) {
 		senha.style.backgroundColor = corCompleta;
 		confirmar.style.backgroundColor = corCompleta;
+		validacao = true;
 	}
 }
+function check(m,f){
+	if(!m.checked || !f.checked){
+		Swal.fire({
+                icon: "error",
+                title: "ERRO",
+                text: "Selecione o gênero!",
+            });
+            validacao = false;
+	}
+}
+function enviarForm() {
+	let mascu = document.getElementById("masculino");
+	let femi = document.getElementById("feminino");
+	 if(!mascu.checked || !femi.checked){
+			Swal.fire({
+				icon: "error",
+				title: "ERRO",
+				text: "Selecione o gênero!",
+			});
+			validacao = false;
+	}else{
+		validacao = true;
+	}
+	if (validacao) {
+		Swal.fire({
+			title: "Cadastro realizado com sucesso!",
+			icon: "success",
+			draggable: true
+		});
 
-function enviarForm(s,sc){
-	
+	}
 }
 
 function ResetCampos() {
