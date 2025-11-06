@@ -15,111 +15,163 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.26.3/dist/sweetalert2.min.css
 </head>
 
 <body>
-  <header id="header-cad" class="d-flex justify-content-between align-items-center p-3 bg-light">
-    <a class="logo navbar-brand" href="index.html" style="font-size: 2rem;">FarmaFipp</a>
-    <div class="info-cad d-flex gap-4">
-      <div><i class="fas fa-headset"></i> Central de Atendimento</div>
-      <div><i class="fas fa-shield-halved"></i> Ambiente 100% Seguro</div>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <!-- LOGO -->
+      <a class="logo navbar-brand" href="index.html">FarmaFipp</a>
+      <!-- BOTÃO TOGGLER PARA MOBILE -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
     </div>
-  </header>
-
-  <div class="container my-5">
-    <div class="top d-flex justify-content-between align-items-center mb-4">
-      <h2><i class="fas fa-user"></i> Nova Conta</h2>
-      <button class="btn btn-outline-primary" onclick="window.location.href='login.html'">Já tenho cadastro</button>
     </div>
-
-    <form id="formCadastro" novalidate>
-      <div class="row g-3">
-        <div class="col-md-6">
-          <label for="nome" class="form-label">Nome</label>
-          <input type="text" class="form-control" id="nome" onblur="validaNome(nome)" required>
-        </div>
-        <div class="col-md-6">
-          <label for="sobrenome" class="form-label">Sobrenome</label>
-          <input type="text" class="form-control" id="sobrenome" onblur="validaNome(sobrenome)" required>
-        </div>
-        <div class="col-md-6">
-          <label for="email" class="form-label">E-mail</label>
-          <input type="text" class="form-control" id="email" onblur="validaEmail(email)" required>
-        </div>
-
-        <div class="col-md-6">
-          <label for="cpf" class="form-label">CPF</label>
-          <input type="text" class="form-control" id="cpf" placeholder="000.000.000-00" 
-            onkeypress="mascara('###.###.###-##', this, event, true)" onblur="validaCpf(cpf)">
-        </div>
-        <div class="col-md-6">
-          <label for="celular" class="form-label">Celular</label>
-          <input type="text" class="form-control" id="celular" placeholder="(00) 00000-0000"
-            onblur="validaCelular(celular)" onkeypress="mascara('(##) #####-####', this, event, true)">
-        </div>
-
-        <div class="col-md-6">
-          <label for="nascimento" class="form-label">Data de Nascimento</label>
-          <input type="text" class="form-control" id="nascimento" placeholder="dd/mm/aaaa"
-            onblur="validaNascimento(nascimento)" onkeypress="mascara('##/##/####', this, event, true)"
-            maxlength="10" required>
-        </div>
-        <div class="col-md-6">
-          <label for="bairro" class="form-label">Bairro</label>
-          <input type="text" class="form-control" id="bairro" placeholder="Bairro"
-            onblur="validaBairro(bairro)" maxlength="100" required>
-        </div>
-        <div class="col-md-6">
-          <label for="endereco" class="form-label">Endereço</label>
-          <input type="text" class="form-control" id="endereco" placeholder="Endereço"
-            onblur="validaEndereco(endereco)" maxlength="100" required>
-        </div>
-        <div class="col-md-6">
-          <label for="complemento" class="form-label">Complemento</label>
-          <input type="text" class="form-control" id="complemento" placeholder="Complemento"
-            onblur="validaComplemento(complemento)" maxlength="100" required>
-        </div>
-        <div class="col-md-6">
-          <label for="rua" class="form-label">Rua</label>
-          <input type="text" class="form-control" id="rua" placeholder="Rua"
-            onblur="validaRua(rua)" maxlength="100" required>
-        </div>
-        <div class="col-md-6">
-          <label for="cep" class="form-label">CEP</label>
-          <input type="text" class="form-control" id="cep" placeholder="00000-000" onblur="validaCep(cep)"
-            onkeypress="mascara('#####-###', this, event, true)" required>
-        </div>
-        <div class="col-md-6">
-          <label for="rg" class="form-label">RG</label>
-          <input type="text" class="form-control" id="rg" placeholder="00.000.000-0" onblur="validaRg(rg)"
-            onkeypress="mascara('##.###.###-#', this, event, true)" required>
-        </div>
-        <div class="col-md-6">
-          <label class="form-label">Gênero</label><br>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" name="genero"  id="masculino" value="Masculino">
-            <label class="form-check-label" for="masculino" >Masculino</label>
+  </nav>
+  <form action="">
+    <div class="conteiner-form">
+      <div class="email">
+        <label for="email">Email</label>
+        <div class="icon-controller">
+          <div class="icons">
+            <span><i class="fas fa-envelope"></i></span>
           </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" name="genero" id="feminino" value="Feminino">
-            <label class="form-check-label" for="feminino">Feminino</label>
-          </div>
-        </div>
-
-        <div class="col-md-6">
-          <label for="senha" class="form-label">Senha</label>
-          <input type="password" class="form-control" id="senha" onblur="validaSenha(senha,confirmar)" required>
-        </div>
-        <div class="col-md-6">
-          <label for="confirmar" class="form-label">Confirmar Senha</label>
-          <input type="password" class="form-control" id="confirmar" onblur="validaSenha(senha,confirmar)" required>
+          <input type="email" id="email" placeholder="Digite seu email" required />
         </div>
       </div>
 
-      <div class="d-flex justify-content-end gap-3 mt-4">
-        <button type="reset" class="btn btn-secondary" onclick="window.location.href='index.html'">Cancelar</button>
-        <button type="submit" class="btn btn-primary" onclick="enviarForm()">Confirmar</button>
+      <div class="form-documents">
+        <div class="controller">
+          <label for="text">Nome</label>
+          <input type="text" id="nome" class="input-style" placeholder="Digite seu nome completo" required />
+        </div>
+        <div class="controller">
+          <label for="text">Sobrenome</label>
+          <input type="text" id="sobrenome" class="input-style" placeholder="Digite seu sobrenome" required />
+        </div>
       </div>
-    </form>
-  </div>
+      <div class="form-documents">
+        <div class="controller">
+          <label for="rg">RG</label>
+          <div class="icon-controller">
+            <div class="icons">
+              <span><i class="fas fa-id-card"></i></span>
+            </div>
+            <input type="text" id="rg" class="input-style" placeholder="Digite seu RG" required />
+          </div>
+        </div>
 
+        <div class="controller">
+          <label for="cpf">CPF</label>
+          <div class="icon-controller">
+            <div class="icons">
+              <span><i class="fas fa-id-card"></i></span>
+            </div>
+            <input type="text" id="cpf" class="input-style" placeholder="Digite seu CPF" required />
+          </div>
+        </div>
+      </div>
+      <div class="form-documents">
+        <div class="controller">
+          <label for="phone">Telefone</label>
+          <div class="icon-controller">
+            <div class="icons">
+              <span><i class="fas fa-phone"></i></span>
+            </div>
+            <input type="text" id="phone" class="input-style" placeholder="Digite seu telefone" required />
+          </div>
+        </div>
+      </div>
+      <div class="form-documents">
+        <div class="controller">
+          <label for="birthdate">Data de Nascimento</label>
+          <div class="icon-controller">
+            <div class="icons">
+              <span><i class="fas fa-calendar-alt"></i></span>
+            </div>
+            <input type="text" id="birthdate" class="input-style" placeholder="DD/MM/AAAA" required />
+          </div>
+        </div>
+      </div>
+      <div class="form-documents">
+        <div class="controller">
+          <label for="address">Endereço</label>
+          <div class="icon-controller">
+            <div class="icons">
+              <span><i class="fas fa-home"></i></span>
+            </div>
+            <input type="text" id="address" class="input-style" placeholder="Digite seu endereço completo" required />
+          </div>
+        </div>
+        <div class="controller">
+          <label for="number">Número</label>
+          <div class="icon-controller">
+            <div class="icons">
+              <span><i class="fas fa-hashtag"></i></span>
+            </div>
+            <input type="text" id="number" class="input-style" placeholder="Número" required />
+          </div>
+
+        </div>
+        <div class="controller">
+          <label for="city">Cidade</label>
+          <div class="icon-controller">
+            <div class="icons">
+              <span><i class="fas fa-city"></i></span>
+            </div>
+            <input type="text" id="city" class="input-style" placeholder="Digite sua cidade" required />
+          </div>
+        </div>
+        <div class="controller">
+          <label for="text">Complemento</label>
+          <input type="text" id="complement" class="input-style" placeholder="Complemento (opcional)" />
+        </div>
+        <div class="controller">
+          <label for="cep">CEP</label>
+          <div class="icon-controller">
+            <div class="icons">
+              <span><i class="fas fa-map-marker-alt"></i></span>
+            </div>
+            <input type="text" id="cep" class="input-style" placeholder="Digite seu CEP" required />
+          </div>
+        </div>
+      </div>
+      <div class="form-documents">
+        <div class="controller">
+          <label for="text">Genero</label>
+          <select id="gender" required>
+            <option value="">Selecione seu gênero</option>
+            <option value="masculino">Masculino</option>
+            <option value="feminino">Feminino</option>
+            <option value="outro">Outro</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-documents">
+
+        <div class="controller">
+          <label for="password">Senha</label>
+          <div class="icon-controller">
+            <div class="icons">
+              <span><i class="fas fa-lock"></i></span>
+            </div>
+            <input type="password" id="password" class="input-style" placeholder="Digite sua senha" required />
+          </div>
+        </div>
+
+        <div class="controller">
+          <label for="confirm-password">Confirmar Senha</label>
+          <div class="icon-controller">
+            <div class="icons">
+              <span><i class="fas fa-lock"></i></span>
+            </div>
+            <input type="password" id="confirm-password" class="input-style" placeholder="Confirme sua senha"
+              required />
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </form>
   <!-- JS - Máscaras e validação -->
   <script src="valida.js"></script>
 </body>
