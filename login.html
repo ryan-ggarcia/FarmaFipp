@@ -4,13 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login - FarmaFipp</title>
+  
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
-</head>
-<body class="d-flex align-items-center justify-content-center vh-100 bg-light">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 
-  <div class="card p-4 shadow-lg" style="max-width:400px; width:100%">
-    <h2 class="text-center text-danger mb-4">Login</h2>
+  
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body class="login-page">
+
+  <div class="card p-4 p-md-5 shadow-lg login-card" style="max-width:450px; width:90%">
+    <h2 class="text-center text-danger mb-4 fw-bold">Login</h2>
     <form>
       <div class="mb-3">
         <label for="email" class="form-label">E-mail ou CPF</label>
@@ -20,18 +26,32 @@
         <label for="senha" class="form-label">Senha</label>
         <div class="input-group">
           <input type="password" class="form-control" id="senha" placeholder="Digite sua senha">
-          <span class="input-group-text"><i class="fas fa-eye"></i></span>
+          <span class="input-group-text" style="cursor: pointer;"><i class="fas fa-eye"></i></span>
         </div>
       </div>
-      <button type="submit" class="btn btn-danger w-100 mb-3">Entrar</button>
-      <div class="text-center mb-3"><a href="#">Esqueci a senha</a></div>
-      <div class="text-center text-muted my-2">Outros métodos de entrada</div>
-      <div class="d-flex justify-content-center gap-3 mb-3">
-        <button class="btn btn-outline-primary"><a href="https://www.facebook.com/?locale=pt_BR" target="_blank"><i class="fab fa-facebook-f"></i></a></button>
-        <button class="btn btn-outline-dark"><a href="https://support.apple.com/pt-br/111001?device-type=iphone" target="_blank"><i class="fab fa-apple"></i></a></button>
-        <button class="btn btn-outline-danger"><a href="https://accounts.google.com/v3/signin/identifier?hl=pt-br&ifkv=AdBytiMFtsDCgCXW8gldKVTyj8leapbLCM2EQwVKJV8hcvMtzMV8X_8SbsOF86hh76cNzmJBUKL1ww&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S1326984512%3A1756511899719531" target="_blank"><i class="fab fa-google"></i> </a></button>
+      <button type="submit" class="btn btn-login w-100 mb-3">Entrar</button>
+      
+      <div class="text-center mb-3 forgot"><a href="#">Esqueci a senha</a></div>
+      
+      <div class="divider d-flex align-items-center my-3">
+          <hr class="flex-grow-1">
+          <span class="px-3">ou</span>
+          <hr class="flex-grow-1">
       </div>
-      <div class="text-center">Não tem conta? <a href="cadastro.html">Cadastre-se</a></div>
+
+      <div class="d-flex justify-content-center gap-3 mb-3">
+        <a href="https...facebook..." target="_blank" class="btn btn-login-social">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https...apple..." target="_blank" class="btn btn-login-social">
+            <i class="fab fa-apple"></i>
+        </a>
+        <a href="https...google..." target="_blank" class="btn btn-login-social">
+             <i class="fab fa-google"></i>
+        </a>
+      </div>
+      
+      <div class="text-center mt-4">Não tem conta? <a href="cadastro.html" class="fw-bold text-danger">Cadastre-se</a></div>
     </form>
   </div>
 

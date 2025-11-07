@@ -1,168 +1,52 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
-  <link rel='stylesheet'
-      href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-straight/css/uicons-solid-straight.css'>
-  <link rel='stylesheet'
-      href='https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
-  <link rel='stylesheet'
-      href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
-  <link rel='stylesheet'
-      href='https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
-  <link rel='stylesheet'
-      href='https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-straight/css/uicons-regular-straight.css'>
-  <link rel='stylesheet'
-      href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
-  <link rel='stylesheet'
-      href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
-  <link rel='stylesheet'
-      href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
-  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
-  <link rel='stylesheet'
-      href='https://cdn-uicons.flaticon.com/2.6.0/uicons-bold-straight/css/uicons-bold-straight.css'>
-  <link rel='stylesheet'
-      href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-straight/css/uicons-regular-straight.css'>
-
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
-      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
-      crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="style.css">
-
   <title>Sobre nós - FarmaFipp</title>
-  <style>
-    :root {
-      --primary-color: #1E2EDE;
-      --azul: #00bbf9;
-      --secundary-color: #ee0000;
-      --button-color: #d3d3d3;
-      --textProd: #505050;
-    }
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  <link rel="stylesheet" href="style.css">
+  
 
-    body {
-      font-family: 'trebuchet MS';
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(to right, #e3f2fd, #fce4ec);
-    }
 
-    main {
-      padding: 3rem 2rem;
-      max-width: 1000px;
-      margin: auto;
-
-    }
-
-    section {
-      margin-bottom: 3rem;
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.8s ease;
-    }
-
-    section.reveal {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .h1 h1 {
-      font-size: 2.2rem;
-      color: #ee0000;
-      margin-bottom: 1rem;
-    }
-
-    .text {
-      background-color: white;
-      padding: 1.5rem;
-      border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      animation: fadeUp 1s ease forwards;
-    }
-
-    .text ol {
-      padding-left: 1.5rem;
-    }
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-  </style>
 </head>
+<body class="sobre-page">
 
-<body>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-        <!-- LOGO -->
-        <a class="logo navbar-brand" href="index.html">FarmaFipp</a>
-        <!-- BOTÃO TOGGLER PARA MOBILE -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <!-- CONTEÚDO COLAPSÁVEL -->
-        <div class="collapse navbar-collapse justify-content-evenly" id="navbarSupportedContent">
-            <!-- BARRA DE PESQUISA CENTRALIZADA FORA DO MENU COLAPSÁVEL -->
-            <div class="pesquisa d-none d-lg-flex mx-auto ">
-                <form class="d-flex gap-3" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" />
-                    <button class="btn btn-outline-danger" type="submit">Search</button>
-                </form>
-            </div>
-            <!-- LINKS COM SPACE BETWEEN -->
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 w-100 d-flex justify-content-evenly">
-
-                <li class="nav-item">
-                    <a class="nav-link active" href="login.html"><img src="img/icon-login.png" alt=""> Login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="cadastro.html"><img src="img/icon-cad.png" alt="">
-                        Cadastre-se</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="sobre.html"><img src="img/icon-sobre.png" alt="">Sobre</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="sobre.html"> <img src="img/icon-prod.png" alt="">Produtos</a>
-                </li>
-            </ul>
-
-            <!-- BOTÃO CARRINHO -->
-            <div class="d-flex">
-                <button class="btn-carrinho">
-                    <i class="fi fi-sr-shopping-basket"></i>
-                </button>
-            </div>
-        </div>
+  <header class="navbar navbar-expand-lg bg-white border-bottom sticky-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand logo" href="index.html">FarmeFipp</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Abrir navegação">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item"><a class="nav-link" href="#">Descontos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Perfumes</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Higiene</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Remédios</a></li>
+          <li class="nav-item"><a class="nav-link active" href="sobre.html">Sobre</a></li>
+        </ul>
+        <form class="d-flex pesquisa" role="search">
+          <input class="form-control me-2" type="search" placeholder="Busque medicamentos..." aria-label="Buscar">
+        </form>
+        <a href="#" class="btn btn-carrinho" role="button">
+           <i class="bi bi-cart3"></i>
+           <span class="d-none d-lg-inline ms-1">Carrinho</span>
+        </a>
+      </div>
     </div>
-</nav>
+  </header>
 
-  <main id="main-sobre">
-    <section>
+  <main id="main-sobre" class="container my-5">
+    <section class="mb-4">
       <div class="h1">
         <h1>Sobre a empresa</h1>
       </div>
-      <div class="text">
+      <div class="text-content">
         <p>
           A FarmeFipp é uma farmácia online inovadora, dedicada a proporcionar saúde, bem-estar e qualidade de vida aos
           nossos clientes por meio de uma plataforma digital segura, acessível e eficiente. Oferecemos uma ampla
@@ -170,29 +54,29 @@
         </p>
       </div>
     </section>
-    <section>
+    <section class="mb-4">
       <div class="h1">
         <h1>Missão</h1>
       </div>
-      <div class="text">
+      <div class="text-content">
         Nossa missão é oferecer uma experiência de compra online simples, segura e eficaz. Através da nossa plataforma
         digital, proporcionamos produtos farmacêuticos de qualidade, com entregas rápidas e cuidado individualizado.
       </div>
     </section>
-    <section>
+    <section class="mb-4">
       <div class="h1">
         <h1>Visão</h1>
       </div>
-      <div class="text">
+      <div class="text-content">
         Ser a farmácia online mais confiável e inovadora, reconhecida pelo atendimento digital, qualidade dos produtos e
         soluções farmacêuticas, com compromisso com a saúde e o bem-estar de nossos clientes.
       </div>
     </section>
-    <section>
+    <section class="mb-4">
       <div class="h1">
         <h1>Valores</h1>
       </div>
-      <div class="text">
+      <div class="text-content">
         <ol>
           <li>Comodidade e acessibilidade</li>
           <li>Ética e transparência</li>
@@ -206,26 +90,21 @@
   </main>
 
   <footer class="footer">
-    <div class="footer-top">
-      <div class="footer-box">
-        <h4><i class="fas fa-headset"></i> Central de Atendimento</h4>
-        <p>Confira as dúvidas mais frequentes ou fale com a gente.</p>
-        <button><a href="#">Acessar</a></button>
-      </div>
-      <div class="footer-box">
-        <h4><i class="fas fa-robot"></i> Chatbot Inteligente</h4>
-        <p>Fale com nossa IA para atendimento rápido e automatizado!</p>
-        <button><a href="#">Acessar</a></button>
-      </div>
-    </div>
     <div class="footer-bottom">
       <p>Desenvolvido Por <span>RX CODERS</span></p>
       <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})">Voltar ao topo</button>
     </div>
   </footer>
 
-  <script>
-    // Animação de seções ao rolar
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    /*
+  MELHORIA:
+  Crie um NOVO arquivo 'sobre.js' e cole este conteúdo.
+  JS nunca deve ficar inline no HTML se puder ser evitado.
+*/
+
+// Animação de seções ao rolar
+document.addEventListener('DOMContentLoaded', () => {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -234,17 +113,10 @@
       });
     }, { threshold: 0.1 });
 
-    document.querySelectorAll('section').forEach(section => observer.observe(section));
-
-    // Validação do campo de pesquisa
-    document.getElementById('form-pesquisa').addEventListener('submit', function (e) {
-      const campo = document.getElementById('campo-pesquisa');
-      if (campo.value.trim() === '') {
-        e.preventDefault();
-        alert('Digite algo para pesquisar.');
-      }
-    });
+    document.querySelectorAll('#main-sobre section').forEach(section => observer.observe(section));
+});
   </script>
+  
+  <script src="sobre.js"></script>
 </body>
-
 </html>

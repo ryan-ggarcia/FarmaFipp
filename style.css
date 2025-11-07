@@ -1,28 +1,28 @@
+/* MELHORIA: 
+  Este é seu novo 'style.css' global.
+  - Mantém suas variáveis de cor.
+  - Contém estilos da INDEX e do FOOTER.
+  - Removi todo o CSS de login e cadastro (que irão para arquivos próprios).
+  - Removi seletores de layout customizados (ex: .prod) que foram 
+    substituídos por 'cards' do Bootstrap.
+*/
+
 :root {
     --primary-color: #1E2EDE;
     --azul: #00bbf9;
-    --secundary-color: #ee0000;
+    --secundary-color: #ee0000; /* Vermelho FarmeFipp */
     --button-color: #d3d3d3;
     --textProd: #505050;
 }
+
 body {
-    font-family: 'trebuchet MS';
+    font-family: 'Trebuchet MS', sans-serif;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-.header-index {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    height: 80px;
-    width: 100%;
-    z-index: 5;
-    border-bottom: var(--primary-color) 1px solid;
-    background-color: #ffffff;
-}
 
+/* === HEADER / NAVBAR === */
 .logo {
     font-size: 2rem;
     font-weight: 800;
@@ -30,19 +30,17 @@ body {
     text-decoration: none;
     color: var(--secundary-color) !important;
 }
+
 .nav-item a {
-    text-decoration: none;
-    color: var(--secundary-color);
-    font-size: 20px;
+    color: var(--secundary-color) !important;
+    font-size: 1.1rem; /* Usei 'rem' para acessibilidade */
     cursor: pointer;
     position: relative;
-    color: var(--secundary-color) !important;
 }
 
 .nav-item a::after {
     content: '';
     position: absolute;
-    top: 1;
     left: 0;
     bottom: 0;
     width: 0px;
@@ -56,8 +54,7 @@ body {
 }
 
 .pesquisa input {
-    height: 40px;
-    width: 450px;
+    width: 350px; /* Um pouco menor para caber melhor */
     border-radius: 20px;
     border: none;
     background-color: #eee;
@@ -65,93 +62,139 @@ body {
 }
 
 .pesquisa input:focus {
-    background-color: #d3d3d3;
-    border: #666 1px solid;
+    background-color: #fff;
+    border: var(--secundary-color) 1px solid;
+    box-shadow: 0 0 5px var(--secundary-color);
 }
-
 
 .btn-carrinho {
-    padding: 20px 25px;
+    padding: 10px 15px;
     border-radius: 30px;
-    border: none;
-    background-color: #eee;
-    transition: background-color ease 0.1s;
-}
-
-.btn-carrinho i {
-    font-size: 20px;
+    border: 1px solid #eee;
+    background-color: #fff;
     color: var(--secundary-color);
+    transition: all ease 0.2s;
 }
 
 .btn-carrinho:hover {
-    background-color: #ddd;
+    background-color: #eee;
+    color: var(--secundary-color);
+    border-color: #ddd;
 }
 
+/* === MAIN INDEX === */
 .main-index {
     display: flex;
     flex-direction: column;
     align-items: center;
     min-height: 80vh;
-    padding: 15px;
+    padding-top: 15px;
     background: linear-gradient(to right, #e3f2fd, #fce4ec);
 }
 
+/* Categorias (Scroller Horizontal) */
 .conteiner-info {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: flex-start; /* Alinhado ao início */
     width: 100%;
-    overflow-x: auto; /* permite rolagem horizontal */
-    scroll-snap-type: x mandatory; /* snap para "grudar" nos itens */
-    -webkit-overflow-scrolling: touch; /* rolagem suave em mobile */
-    scrollbar-color: var(--azul);
-    gap: 4px ;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-color: var(--azul) #f0f0f0;
+    gap: 1rem; /* Espaçamento */
+    padding: 10px 0;
 }
-/* Reajuste em div de itens */
+
+/* ================================== */
+/* ====   ESTILOS DO MODAL DE LOGIN   ==== */
+/* ================================== */
+
+/* Define os botões de Entrar e Cadastrar dentro do modal */
+.btn-modal-login, .btn-modal-register {
+    border-radius: 50px; /* Bordas bem arredondadas (pílula) */
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border: 2px solid transparent; /* Borda transparente para manter o tamanho */
+}
+
+/* Botão Vermelho (Entrar) */
+.btn-modal-login {
+    background-color: var(--secundary-color); /* Sua variável de cor vermelha */
+    color: white;
+}
+.btn-modal-login:hover {
+    background-color: #c40000; /* Um vermelho mais escuro no hover */
+    color: white;
+}
+
+/* Botão Branco (Cadastrar) */
+.btn-modal-register {
+    background-color: white;
+    color: var(--secundary-color); /* Texto vermelho */
+    border-color: #eee; /* Borda cinza-clara */
+}
+.btn-modal-register:hover {
+    background-color: #f8f9fa; /* Um cinza leve no hover */
+    border-color: #ddd;
+}
+
+/* ================================== */
+/* ====   ESTILO NOVO ADICIONADO   ==== */
+/* ================================== */
+
+/* Estilo para o novo botão de Login na navbar */
+.btn-login-nav {
+    border-radius: 50px; /* Isso cria a borda bem arredondada */
+    padding: 8px 16px;   /* Um padding customizado (ajuste se preferir) */
+    font-weight: 600;
+    font-size: 0.9rem;
+    line-height: 1.2;  /* Garante que o ícone e o texto alinhem bem */
+}
+
+/* A cor vermelha (background-color: #ee0000;) 
+   já está sendo aplicada pela classe 'btn-danger' do Bootstrap, 
+   que usa sua variável '--secundary-color' se você a configurou corretamente.
+*/
+
 .info {
     background-color: #90e0ef;
     height: 75px;
     width: 150px;
+    min-width: 150px; /* Garante que não encolha */
     text-align: center;
     border-radius: 20px;
     color: #023e8a;
     transition: background-color 0.1s ease;
     cursor: pointer;
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    flex-wrap: nowrap;
-    flex: 0 0 auto; /* mantém o item sem encolher */
-    scroll-snap-align: start; /* ajuda no snap */
+    align-items: center; /* Centraliza o texto */
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    font-weight: bold;
 }
 
 .info:hover {
     background-color: #48cae4;
 }
 
-.info i {
-    font-size: 30px;
-}
-
-.leg {
-    margin-top: 10px;
-}
-
-.leg legend {
-    font-size: 25px;
-}
-
+/* Carrossel Customizado */
 .ctn-carroceu {
     overflow: hidden;
     padding: 10px;
-    width: 95vw;
+    width: 100%; /* Mais responsivo */
     position: relative;
 }
 
 .img-prod img {
-    height: 50%;
+    /* height: 50%; */ /* Removido para a imagem ser responsiva */
     width: 100%;
     border-radius: 18px;
+    /* Animações mantidas */
     transform: translateX(400px);
     opacity: 0;
     transition: transform ease-in-out 0.6s, opacity ease 0.6s;
@@ -165,8 +208,6 @@ body {
 
 .img-prod {
     display: none;
-    flex-direction: row;
-    justify-content: center;
     opacity: 0;
     position: relative;
     transform: translateX(100vw);
@@ -174,7 +215,7 @@ body {
 }
 
 .ativa {
-    display: flex;
+    display: block; /* Trocado para 'block' */
     opacity: 1;
     pointer-events: auto;
     transform: translateX(0);
@@ -204,14 +245,14 @@ body {
 .ctn-arrows {
     position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%);
-    width: 95vh;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
     display: flex;
-    justify-content: center;
-    flex-direction: row;
-    gap: 70rem;
+    justify-content: space-between; /* Melhor que 'gap' e 'width' fixos */
+    padding: 0 1rem; /* Espaçamento das bordas */
     z-index: 10;
+    pointer-events: none; /* Permite clicar 'através' do container */
 }
 
 .btn-arrows {
@@ -222,271 +263,84 @@ body {
     font-size: 1.5rem;
     cursor: pointer;
     transition: all 0.3s ease;
+    pointer-events: auto; /* Faz os botões clicáveis */
 }
 .btn-arrows:hover{
     border:solid 2px var(--secundary-color);
     background-color: #fce4ec;
 }
-.ctn-prod {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-}
 
-.prod {
-    display: flex;
-    flex-direction: column;
-    border-radius: 20px;
-    padding: 10px;
-    height: 400px;
-    width: 300px;
+/* MELHORIA: 
+  - Removi seu seletor '.prod'
+  - Criei '.prod-card' para customizar o Card do Bootstrap
+*/
+.prod-card {
     transition: all 0.2s ease;
-    background-color: white;
 }
 
-.prod:hover {
-    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+.prod-card:hover {
+    transform: translateY(-5px); /* Efeito de 'levantar' */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
 }
 
-.prod-img img {
-    height: 150px;
-    width: 150px;
+.prod-card .card-img-top {
+    max-height: 200px; /* Limita altura da imagem */
+    object-fit: contain; /* Garante que a imagem caiba */
 }
 
-.text-prod span {
-    font-size: 25px;
-    font-weight: 400;
+.text-prod-title {
+    font-size: 0.9rem;
+    color: var(--textProd);
+    flex-grow: 1; /* Faz o texto preencher o espaço, alinhando botões */
+}
+
+.text-prod-price {
+    font-size: 1.5rem;
+    font-weight: 700;
     color: var(--secundary-color);
+    margin: 0.5rem 0;
 }
 
 .btn-prod {
-    margin-top: 15px;
-}
-
-.btn-prod button {
-    padding: 15px 25px;
-    border: 3px solid var(--primary-color);
+    padding: 10px 20px;
+    border: 2px solid var(--primary-color);
     border-radius: 15px;
     background: transparent;
     color: var(--primary-color);
-    font-size: 20px;
+    font-size: 1.1rem;
     font-weight: 600;
     transition: all 0.3s ease;
     cursor: pointer;
+    width: 100%; /* Ocupa toda a largura do card-body */
 }
 
-.btn-prod button:hover {
+.btn-prod:hover {
     background-color: var(--primary-color);
     color: white;
 }
 
-/* login config */
 
-header h1 {
-    color: var(--secundary-color);
-    padding: 10px;
-}
-
-.header-left img {
-    height: 30px;
-}
-
-form {
-    padding: 10px;
-}
-
-.header-center,
-.header-right {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 24px;
-    color: #111;
-    transform: translateX(42%);
-}
-
-.header-center i,
-.header-right i {
-    font-size: 24px;
-}
-
-#main-login {
-    width: 100%;
-    max-width: 400px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-#form-login {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-.btn-login {
-    background-color: var(--secundary-color);
-    color: white;
-    padding: 16px;
-    border: none;
-    border-radius: 30px;
-    font-size: 20px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.5s ease;
-}
-
-.btn-login:hover {
-    transform: translateY(-5px);
-}
-
-
-.forgot {
-    text-align: center;
-    margin-top: -10px;
-}
-
-.forgot a {
-    text-decoration: underline;
-    color: var(--primary-color);
-    font-weight: bold;
-    font-size: 18px;
-}
-
-.divider {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: #999;
-    font-size: 16px;
-    margin: 20px 0;
-}
-
-.divider::before,
-.divider::after {
-    content: "";
-    flex: 1;
-    height: 1px;
-    background: #ddd;
-    margin: 0 10px;
-}
-
-.social-login {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 20px;
-}
-
-.social-login button {
-    border: 1px solid #ccc;
-    border-radius: 30px;
-    padding: 10px 20px;
-    background: white;
-    cursor: pointer;
-    font-size: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 80px;
-    height: 65px;
-    transition: all 0.10 ease-in;
-}
-
-.social-login button:hover {
-    background: rgb(200, 200, 200);
-}
-
-.signup {
-    text-align: center;
-    font-size: 20px;
-}
-
-.signup a {
-    font-weight: bold;
-    text-decoration: underline;
-    color: var(--primary-color);
-    margin-left: 4px;
-}
-/* FORMULARIO CONFIG */
-.form-style{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: auto;
-}
-.conteiner{
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    max-width: 80%;
-}
-.form-documents{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 5px;
-    gap: 10px;
-}
-.controller{
-    display: flex;
-    flex-direction: column;
-    width: 45%;
-    margin-bottom: 15px;
-}
-.icon-controller{
-    display: flex;
-    align-items: center;
-    margin-bottom: 5px;
-    font-size: 18px;
-    color: var(--button-color);
-}
-.icons{
-    background-color: var(--textProd);
-    padding: 10px 12px;
-    border-radius: 8px 0 0 8px;
-}
-#email{
-    width: 80%;
-    padding: 10px;
-    border-radius: 0 8px 8px 0;
-    border: 1px solid #ccc;
-    font-size: 16px;
-}
-.input-style{
-    width: 85%;
-    padding: 10px;
-    border-radius: 0 8px 8px 0;
-    border: 1px solid #ccc;
-    font-size: 16px;
-    width:400px;
-}
-/* CADASTRO CONFIG */
-
-/* FOOTER CONFIG */
+/* === FOOTER CONFIG (Mantido) === */
 .footer {
     background-color: #f5f5f5;
     padding: 30px 20px;
     font-family: sans-serif;
     font-size: 14px;
     color: #333;
+    border-top: 1px solid #ddd;
 }
 
 .footer-top {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    border-bottom: 1px solid #ddd;
     padding-bottom: 20px;
 }
 
 .footer-box {
     width: 300px;
     margin: 10px;
+    text-align: center; /* Centralizado */
 }
 
 .footer-box h4 i {
@@ -520,8 +374,11 @@ form {
 .footer-bottom {
     text-align: center;
     margin-top: 20px;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
 }
 
+/* ... (resto do seu CSS do footer) ... */
 .footer-bottom button {
     margin-top: 10px;
     padding: 8px 16px;
@@ -536,36 +393,18 @@ form {
 .footer-bottom span {
     font-size: 1.5rem;
     font-weight: bold;
-    /* Aplica o gradiente como fundo */
     background: linear-gradient(45deg, hsla(169, 100%, 39%, 1), hsla(203, 69%, 5%, 1));
-
-    /* Aumenta o tamanho do fundo para permitir a animação */
     background-size: 200% 200%;
-
-    /* Aplica a animação definida abaixo */
     animation: moveGradient 5s ease infinite;
-
-    /* Faz com que o fundo seja visível apenas onde há texto */
     background-clip: text;
     -webkit-background-clip: text;
-
-    /* Torna o texto transparente para mostrar o fundo por trás */
     -webkit-text-fill-color: transparent;
 }
 
-/* Animação do gradiente */
 @keyframes moveGradient {
-    0% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 .footer-bottom button:hover {
@@ -576,4 +415,195 @@ form {
     margin-top: 10px;
     font-size: 12px;
     color: #666;
+}
+/*
+  MELHORIA:
+  Crie um NOVO arquivo 'login.css' e cole este conteúdo.
+  Ele contém APENAS os estilos da página de login.
+*/
+body.login-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(to right, #e3f2fd, #fce4ec);
+}
+
+.login-card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.btn-login-social {
+    color: #505050;
+    border: 1px solid #ccc;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    transition: all 0.2s ease;
+}
+.btn-login-social:hover {
+    background-color: #f0f0f0;
+    color: #111;
+}
+
+/* Seus estilos antigos de login (com pequenas adaptações) */
+.btn-login {
+    background-color: var(--secundary-color);
+    color: white;
+    padding: 12px; /* Ajustado */
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.btn-login:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(238, 0, 0, 0.3);
+}
+
+.forgot a {
+    text-decoration: none; /* Sublinhado só no hover */
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+.forgot a:hover {
+    text-decoration: underline;
+}
+
+.divider {
+    color: #999;
+    font-size: 0.9rem;
+}
+/*
+  MELHORIA:
+  Crie um NOVO arquivo 'cadastro.css' e cole este conteúdo.
+  Ele contém APENAS os estilos do formulário.
+*/
+body.cadastro-page {
+     background: linear-gradient(to right, #e3f2fd, #fce4ec);
+     padding: 2rem 0;
+}
+
+.form-style {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+
+.conteiner-form {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 900px; /* Aumentado para formulários grandes */
+}
+
+.form-documents {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.controller {
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Padrão mobile */
+    margin-bottom: 15px;
+}
+
+/* Em telas maiores, 2 colunas */
+@media (min-width: 768px) {
+    .controller {
+        width: 48%; /* Duas colunas com espaço */
+    }
+}
+
+.icon-controller {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    font-size: 18px;
+    color: var(--button-color);
+}
+
+.icons {
+    background-color: var(--textProd);
+    color: white; /* Adicionado */
+    padding: 10px 12px;
+    border-radius: 8px 0 0 8px;
+    display: flex; /* Adicionado */
+    align-items: center; /* Adicionado */
+    justify-content: center; /* Adicionado */
+}
+
+#email {
+    width: 100%; /* Corrigido */
+    padding: 10px;
+    border-radius: 0 8px 8px 0;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.input-style {
+    width: 100%; /* Corrigido */
+    padding: 10px;
+    border-radius: 0 8px 8px 0;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    flex-grow: 1; /* Faz o input crescer */
+}
+
+/*
+  MELHORIA:
+  Crie um NOVO arquivo 'sobre.css' e cole este conteúdo.
+  Ele contém APENAS os estilos da página 'Sobre'.
+*/
+
+body.sobre-page {
+  background: linear-gradient(to right, #e3f2fd, #fce4ec);
+}
+
+#main-sobre section {
+  margin-bottom: 3rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+#main-sobre section.reveal {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#main-sobre .h1 h1 {
+  font-size: 2.2rem;
+  color: var(--secundary-color); /* Usando sua variável global */
+  margin-bottom: 1rem;
+}
+
+.text-content {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.text-content ol {
+  padding-left: 1.5rem;
 }
