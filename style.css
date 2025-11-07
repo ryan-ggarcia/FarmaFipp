@@ -411,12 +411,18 @@ form {
     margin-left: 4px;
 }
 /* FORMULARIO CONFIG */
-form{
+.form-style{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+.conteiner{
     display: flex;
     flex-direction: column;
     padding: 20px;
-    max-width: 600px;
-    align-items: center;
+    max-width: 80%;
 }
 .form-documents{
     display: flex;
@@ -445,7 +451,7 @@ form{
     border-radius: 8px 0 0 8px;
 }
 #email{
-    width: 100%;
+    width: 80%;
     padding: 10px;
     border-radius: 0 8px 8px 0;
     border: 1px solid #ccc;
@@ -457,6 +463,7 @@ form{
     border-radius: 0 8px 8px 0;
     border: 1px solid #ccc;
     font-size: 16px;
+    width:400px;
 }
 /* CADASTRO CONFIG */
 

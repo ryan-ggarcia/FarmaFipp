@@ -27,8 +27,9 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.26.3/dist/sweetalert2.min.css
     </div>
     </div>
   </nav>
-  <form action="">
-    <div class="conteiner-form">
+
+  <section class="form-style">
+    <form action="" class="conteiner">
       <div class="email">
         <label for="email">Email</label>
         <div class="icon-controller">
@@ -42,7 +43,10 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.26.3/dist/sweetalert2.min.css
       <div class="form-documents">
         <div class="controller">
           <label for="text">Nome</label>
-          <input type="text" id="nome" class="input-style" placeholder="Digite seu nome completo" required />
+          <div class="icon-controller">
+            <div class="icons"></div>
+            <input type="text" id="nome" class="input-style" placeholder="Digite seu nome completo" required />
+          </div>
         </div>
         <div class="controller">
           <label for="text">Sobrenome</label>
@@ -72,23 +76,21 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.26.3/dist/sweetalert2.min.css
       </div>
       <div class="form-documents">
         <div class="controller">
-          <label for="phone">Telefone</label>
-          <div class="icon-controller">
-            <div class="icons">
-              <span><i class="fas fa-phone"></i></span>
-            </div>
-            <input type="text" id="phone" class="input-style" placeholder="Digite seu telefone" required />
-          </div>
-        </div>
-      </div>
-      <div class="form-documents">
-        <div class="controller">
           <label for="birthdate">Data de Nascimento</label>
           <div class="icon-controller">
             <div class="icons">
               <span><i class="fas fa-calendar-alt"></i></span>
             </div>
             <input type="text" id="birthdate" class="input-style" placeholder="DD/MM/AAAA" required />
+          </div>
+        </div>
+         <div class="controller">
+          <label for="phone">Telefone</label>
+          <div class="icon-controller">
+            <div class="icons">
+              <span><i class="fas fa-phone"></i></span>
+            </div>
+            <input type="text" id="phone" class="input-style" placeholder="Digite seu telefone" required />
           </div>
         </div>
       </div>
@@ -110,7 +112,6 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.26.3/dist/sweetalert2.min.css
             </div>
             <input type="text" id="number" class="input-style" placeholder="Número" required />
           </div>
-
         </div>
         <div class="controller">
           <label for="city">Cidade</label>
@@ -134,8 +135,6 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.26.3/dist/sweetalert2.min.css
             <input type="text" id="cep" class="input-style" placeholder="Digite seu CEP" required />
           </div>
         </div>
-      </div>
-      <div class="form-documents">
         <div class="controller">
           <label for="text">Genero</label>
           <select id="gender" required>
@@ -146,8 +145,8 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.26.3/dist/sweetalert2.min.css
           </select>
         </div>
       </div>
-      <div class="form-documents">
 
+      <div class="form-documents">
         <div class="controller">
           <label for="password">Senha</label>
           <div class="icon-controller">
@@ -169,9 +168,8 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.26.3/dist/sweetalert2.min.css
           </div>
         </div>
       </div>
-
-    </div>
-  </form>
+    </form>
+  </section>
   <!-- JS - Máscaras e validação -->
   <script src="valida.js"></script>
 </body>
