@@ -1,99 +1,164 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const slides = document.querySelectorAll('.img-prod');
-  const dots = document.querySelectorAll('.slide');
-  const btnPrev = document.getElementById('prev');
-  const btnNext = document.getElementById('next');
 
-  if (!slides.length) return;
+    // --- 1. SEÇÃO: CARROSSEL DE IMAGENS (HERO) ---
+    const slides = document.querySelectorAll('.img-prod');
+    const dots = document.querySelectorAll('.slide');
+    const btnPrev = document.getElementById('prev');
+    const btnNext = document.getElementById('next');
 
-  let index = 0;
-  const total = slides.length;
+    if (slides.length > 0) {
+        let index = 0;
+        const total = slides.length;
+        const setActive = (i) => {
+            slides.forEach((el, idx) => el.classList.toggle('ativa', idx === i));
+            dots.forEach((el, idx) => el.classList.toggle('ativar', idx === i));
+        };
+        const next = () => { index = (index + 1) % total; setActive(index); };
+        const prev = () => { index = (index - 1 + total) % total; setActive(index); };
+        setActive(index);
+        let timer = setInterval(next, 8000);
+        const resetTimer = () => { clearInterval(timer); timer = setInterval(next, 8000); };
+        btnNext?.addEventListener('click', () => { next(); resetTimer(); });
+        btnPrev?.addEventListener('click', () => { prev(); resetTimer(); });
+        dots.forEach((d, i) => d.addEventListener('click', () => { index = i; setActive(index); resetTimer(); }));
+    }
 
-  const setActive = (i) => {
-    slides.forEach((el, idx) => el.classList.toggle('ativa', idx === i));
-    dots.forEach((el, idx) => el.classList.toggle('ativar', idx === i));
-  };
+    // --- 2. SEÇÃO: VALIDAÇÃO DA PESQUISA (NAVBAR) ---
+    const formPesquisa = document.getElementById('formPesquisa');
+    const inputPesquisa = document.getElementById('inputPesquisa');
 
-  const next = () => { index = (index + 1) % total; setActive(index); };
-  const prev = () => { index = (index - 1 + total) % total; setActive(index); };
+    if (formPesquisa) {
+        formPesquisa.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const termoBuscado = inputPesquisa.value;
+            if (termoBuscado.trim() === "") {
+                Swal.fire({ icon: "error", title: "ERRO", text: "Digite algo para buscar!" });
+            } else {
+                Swal.fire({ icon: "warning", title: "Oops...", text: "Produto não encontrado!" });
+            }
+        });
+    }
 
-  setActive(index);
+    // --- 3. SEÇÃO: VALIDAÇÃO DA PESQUISA (HERO) ---
+    const formPesquisaHero = document.getElementById('formPesquisaHero');
+    const inputPesquisaHero = document.getElementById('inputPesquisaHero');
 
-  let timer = setInterval(next, 8000);
-  const resetTimer = () => { clearInterval(timer); timer = setInterval(next, 8000); };
+    if (formPesquisaHero) {
+        formPesquisaHero.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const termoBuscado = inputPesquisaHero.value;
+            if (termoBuscado.trim() === "") {
+                Swal.fire({ icon: "error", title: "ERRO", text: "Digite algo para buscar!" });
+            } else {
+                Swal.fire({ icon: "warning", title: "Oops...", text: "Produto não encontrado!" });
+            }
+        });
+    }
 
-  btnNext?.addEventListener('click', () => { next(); resetTimer(); });
-  btnPrev?.addEventListener('click', () => { prev(); resetTimer(); });
-  dots.forEach((d, i) => d.addEventListener('click', () => { index = i; setActive(index); resetTimer(); }));
-});
-document.addEventListener('DOMContentLoaded', () => {
+    // --- 4. SEÇÃO: LÓGICA DO CARRINHO (REFATORADA) ---
+    let carrinho = JSON.parse(localStorage.getItem('farmaFippCart')) || [];
+    const cartCountElement = document.getElementById('cart-count');
 
-  // === CÓDIGO DO CARROSSEL (Existente) ===
-  const slides = document.querySelectorAll('.img-prod');
-  const dots = document.querySelectorAll('.slide');
-  const btnPrev = document.getElementById('prev');
-  const btnNext = document.getElementById('next');
+    function salvarCarrinho() {
+        localStorage.setItem('farmaFippCart', JSON.stringify(carrinho));
+    }
 
-  if (slides.length > 0) { // Adicionei uma checagem para evitar erros
-    let index = 0;
-    const total = slides.length;
+    function atualizarContadorCarrinho() {
+        if (cartCountElement) {
+            cartCountElement.textContent = carrinho.length;
+        }
+    }
 
-    const setActive = (i) => {
-      slides.forEach((el, idx) => el.classList.toggle('ativa', idx === i));
-      dots.forEach((el, idx) => el.classList.toggle('ativar', idx === i));
-    };
+    // MUDANÇA: Delegação de Evento
+    // Ouve cliques no documento inteiro
+    document.addEventListener('click', function(event) {
+        
+        // Verifica se o alvo do clique foi um botão com a classe '.btn-prod'
+        if (event.target.classList.contains('btn-prod')) {
+            const botao = event.target;
+            const nome = botao.dataset.nome;
+            const preco = botao.dataset.preco;
 
-    const next = () => { index = (index + 1) % total; setActive(index); };
-    const prev = () => { index = (index - 1 + total) % total; setActive(index); };
+            const produto = {
+                nome: nome,
+                preco: parseFloat(preco)
+            };
 
-    setActive(index);
+            carrinho.push(produto);
+            salvarCarrinho();
+            atualizarContadorCarrinho();
 
-    let timer = setInterval(next, 8000);
-    const resetTimer = () => { clearInterval(timer); timer = setInterval(next, 8000); };
-
-    btnNext?.addEventListener('click', () => { next(); resetTimer(); });
-    btnPrev?.addEventListener('click', () => { prev(); resetTimer(); });
-    dots.forEach((d, i) => d.addEventListener('click', () => { index = i; setActive(index); resetTimer(); }));
-  }
-  // === FIM DO CÓDIGO DO CARROSSEL ===
-
-
-  // ===========================================
-  // === NOVO CÓDIGO DA BARRA DE PESQUISA ====
-  // ===========================================
-  const formPesquisa = document.getElementById('formPesquisa');
-  const inputPesquisa = document.getElementById('inputPesquisa');
-
-  // Verifica se o formulário de pesquisa existe na página atual
-  if (formPesquisa) {
-    
-    // Adiciona um "ouvinte" para o evento de 'submit' (clique no botão ou Enter)
-    formPesquisa.addEventListener('submit', function(event) {
-      
-      // 1. Previne o recarregamento da página (comportamento padrão do form)
-      event.preventDefault(); 
-      
-      const termoBuscado = inputPesquisa.value;
-
-      // 2. Verifica se algo foi digitado
-      if (termoBuscado.trim() === "") {
-        // Alerta se o campo estiver vazio
-        Swal.fire({
-			icon: "error",
-			title: "ERRO",
-			text: "Digite algo para buscar!",
-			footer: 'Site em manutenção'
-		});
-      } else {
-Swal.fire({
-			icon: "error",
-			title: "ERRO",
-			text: "Produto não encontrado!",
-			footer: 'Site em manutenção'
-		});
-      }
+            Swal.fire({
+                icon: 'success',
+                title: 'Produto Adicionado!',
+                text: `${nome} foi adicionado ao seu carrinho.`,
+                timer: 2000,
+                showConfirmButton: false,
+                toast: true,
+                position: 'top-end'
+            });
+        }
     });
-  }
-  // === FIM DO NOVO CÓDIGO ===
 
+    atualizarContadorCarrinho();
+
+
+    // --- 5. SEÇÃO: INICIALIZAÇÃO DOS CARROSSÉIS DE PRODUTOS (NOVO) ---
+    
+    // Inicializa o carrossel "Mais Vendidos"
+    new Swiper("#mais-vendidos-carousel", {
+        spaceBetween: 16, // Espaço entre os slides
+        slidesPerView: 1.2, // Padrão mobile (mostra 1 e um pedaço do outro)
+        
+        // Navegação (setas)
+        navigation: {
+            nextEl: "#mais-vendidos-next",
+            prevEl: "#mais-vendidos-prev",
+        },
+        
+        // Responsividade (quantos slides mostrar por tamanho de tela)
+        breakpoints: {
+            576: { // sm
+                slidesPerView: 2.2,
+            },
+            768: { // md
+                slidesPerView: 3,
+            },
+            992: { // lg
+                slidesPerView: 4,
+            }
+        }
+    });
+
+    // Inicializa o carrossel "Vitaminas"
+    new Swiper("#vitaminas-carousel", {
+        spaceBetween: 16,
+        slidesPerView: 1.2,
+        navigation: {
+            nextEl: "#vitaminas-next",
+            prevEl: "#vitaminas-prev",
+        },
+        breakpoints: {
+            576: { slidesPerView: 2.2 },
+            768: { slidesPerView: 3 },
+            992: { slidesPerView: 4 }
+        }
+    });
+
+    // Inicializa o carrossel "Cuidados Pessoais"
+    new Swiper("#cuidados-pessoais-carousel", {
+        spaceBetween: 16,
+        slidesPerView: 1.2,
+        navigation: {
+            nextEl: "#cuidados-pessoais-next",
+            prevEl: "#cuidados-pessoais-prev",
+        },
+        breakpoints: {
+            576: { slidesPerView: 2.2 },
+            768: { slidesPerView: 3 },
+            992: { slidesPerView: 4 }
+        }
+    });
+
+    
 });

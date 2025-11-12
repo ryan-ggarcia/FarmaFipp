@@ -106,32 +106,28 @@ body {
     padding: 10px 0;
 }
 
-/* ================================== */
-/* ====   ESTILOS DO MODAL DE LOGIN   ==== */
-/* ================================== */
 
-/* Define os botões de Entrar e Cadastrar dentro do modal */
 .btn-modal-login, .btn-modal-register {
-    border-radius: 50px; /* Bordas bem arredondadas (pílula) */
+    border-radius: 50px; 
     padding: 12px 20px;
     font-size: 1.1rem;
     font-weight: 600;
     text-decoration: none;
     transition: all 0.2s ease;
-    border: 2px solid transparent; /* Borda transparente para manter o tamanho */
+    border: 2px solid transparent; 
 }
 
-/* Botão Vermelho (Entrar) */
+
 .btn-modal-login {
-    background-color: var(--secundary-color); /* Sua variável de cor vermelha */
+    background-color: var(--secundary-color); 
     color: white;
 }
 .btn-modal-login:hover {
-    background-color: #c40000; /* Um vermelho mais escuro no hover */
+    background-color: #c40000; 
     color: white;
 }
 
-/* Botão Branco (Cadastrar) */
+
 .btn-modal-register {
     background-color: white;
     color: var(--secundary-color); /* Texto vermelho */

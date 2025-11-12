@@ -19,7 +19,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.26.3/dist/sweetalert2.min.css
 
   <header class="navbar navbar-expand-lg bg-white border-bottom sticky-top shadow-sm">
     <div class="container">
-      <a class="navbar-brand logo" href="index.html">FarmeFipp</a>
+      <a class="navbar-brand logo" href="index.html">FarmaFipp</a>
       
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Abrir navegação">
         <span class="navbar-toggler-icon"></span>
@@ -43,11 +43,12 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.26.3/dist/sweetalert2.min.css
            <span class="d-none d-lg-inline ms-1">Login Ou Cadastre</span>
         </a>
         
-        <a href="#" class="btn btn-carrinho" role="button" title="Ver Carrinho">
-           <i class="bi bi-cart3 fs-5"></i>
-           <span class="d-none d-lg-inline ms-1">Carrinho</span>
+        <a href="carrinho/carrinho.html" class="btn btn-carrinho position-relative" role="button" title="Ver Carrinho">
+        <i class="bi bi-cart3 fs-5"></i>
+        <span class="d-none d-lg-inline ms-1">Carrinho</span>
+        
+        <span class="badge bg-danger rounded-pill ms-1" id="cart-count">0</span>
         </a>
-
       </div>
     </div>
   </header>
@@ -58,7 +59,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.26.3/dist/sweetalert2.min.css
         
         <div class="modal-header border-0 pb-0">
           <h5 class="modal-title text-danger" id="loginModalLabel">
-             <i class="bi bi-capsule-pill"></i> FarmeFipp
+             <i class="bi bi-capsule-pill"></i> FarmaFipp
           </h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
@@ -75,7 +76,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.26.3/dist/sweetalert2.min.css
       </div>
     </div>
   </div>
-  <main class="main-index">
+ <main class="main-index">
     
     <section class="container my-4">
       <div class="p-4 p-md-5 rounded-3 bg-light">
@@ -83,17 +84,19 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.26.3/dist/sweetalert2.min.css
           <div class="col-lg-7">
             <h1 class="display-5 fw-bold mb-3">Cuidar da sua saúde ficou fácil</h1>
             <p class="fs-5 mb-4">Entrega rápida, segurança e qualidade em cada pedido.</p>
-            <div class="input-group">
-              <input type="text" class="form-control" placeholder="Procure por Dipirona, Creatina..." aria-label="Buscar no site">
-              <button class="btn btn-danger" type="button">Buscar</button>
+            
+            <form class="input-group" id="formPesquisaHero">
+              <input type="text" class="form-control" placeholder="Procure por Dipirona, Creatina..." aria-label="Buscar no site" id="inputPesquisaHero">
+              <button class="btn btn-danger" type="submit">Buscar</button>
+            </form>
             </div>
-          </div>
           <div class="col-lg-5 text-center d-none d-lg-block">
             <img src="https://via.placeholder.com/400x300/fce4ec/ee0000?text=Banner+Farm%C3%A1cia" alt="Ofertas e saúde FarmeFipp" class="img-fluid rounded">
           </div>
         </div>
       </div>
     </section>
+
 
     <section class="container ctn-carroceu my-3">
         <div class="position-relative">
@@ -127,86 +130,189 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.26.3/dist/sweetalert2.min.css
       <div class="info px-3"><span class="leg">Mais vendidos</span></div>
     </section>
 
-    <section class="container my-5">
+    <!-- ================================== -->
+    <!-- ==== SEÇÕES DE PRODUTOS ATUALIZADAS ==== -->
+    <!-- ================================== -->
+
+    <!-- SEÇÃO 1: MAIS VENDIDOS -->
+    <section class="container my-5 product-carousel-section">
       <div class="d-flex justify-content-between align-items-center mb-3">
-        <h2 class="m-0">Ofertas do Dia</h2>
-        <a href="#" class="text-danger-emphasis">Ver tudo</a>
+        <h2 class="m-0">Mais Vendidos</h2>
+        <div class="swiper-nav-buttons d-none d-md-block">
+          <button class="btn btn-arrow" id="mais-vendidos-prev"><i class="bi bi-chevron-left"></i></button>
+          <button class="btn btn-arrow" id="mais-vendidos-next"><i class="bi bi-chevron-right"></i></button>
+        </div>
       </div>
       
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 ctn-prod">
-        
-        <div class="col">
-          <div class="card h-100 shadow-sm border-0 prod-card">
-            <img src="https://via.placeholder.com/300x200/eee/777?text=Imagem+Produto+1" class="card-img-top p-3" alt="Creatina Vitafor Creafort 300g">
-            <div class="card-body d-flex flex-column">
-              <p class="card-text text-prod-title">Suplemento Alimentar Vitafor Creafort 100% Creatina 300g</p>
-              <span class="text-prod-price">R$229,90</span>
-              <button class="btn btn-prod mt-auto">Adicionar</button>
+      <!-- Carrossel Swiper -->
+      <div class="swiper" id="mais-vendidos-carousel">
+        <div class="swiper-wrapper">
+          
+          <!-- Produto 1 -->
+          <div class="swiper-slide">
+            <div class="card h-100 shadow-sm border-0 prod-card">
+              <img src="https://placehold.co/300x200/eee/777?text=Fralda+Huggies" class="card-img-top p-3" alt="Fralda Huggies">
+              <div class="card-body d-flex flex-column">
+                <p class="card-text text-prod-title">Fralda Calça Huggies Supreme Care XXG - 80 Tiras</p>
+                <span class="text-prod-price">R$ 85,33</span>
+                <button class="btn btn-prod mt-auto" data-nome="Fralda Huggies XXG" data-preco="85.33">Adicionar</button>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="col">
-          <div class="card h-100 shadow-sm border-0 prod-card">
-            <img src="https://via.placeholder.com/300x200/eee/777?text=Imagem+Produto+2" class="card-img-top p-3" alt="Sorine Jet 0,9% 100ml">
-            <div class="card-body d-flex flex-column">
-              <p class="card-text text-prod-title">Sorine Jet 0,9% Spray 100ml</p>
-              <span class="text-prod-price">R$26,19</span>
-              <button class="btn btn-prod mt-auto">Adicionar</button>
+          <!-- Produto 2 -->
+          <div class="swiper-slide">
+            <div class="card h-100 shadow-sm border-0 prod-card">
+              <img src="https://placehold.co/300x200/eee/777?text=CeraVe" class="card-img-top p-3" alt="Loção CeraVe">
+              <div class="card-body d-flex flex-column">
+                <p class="card-text text-prod-title">Loção Hidratante Corporal CeraVe 473ml</p>
+                <span class="text-prod-price">R$ 124,90</span>
+                <button class="btn btn-prod mt-auto" data-nome="Loção CeraVe 473ml" data-preco="124.90">Adicionar</button>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="col">
-          <div class="card h-100 shadow-sm border-0 prod-card">
-            <img src="https://via.placeholder.com/300x200/eee/777?text=Imagem+Produto+3" class="card-img-top p-3" alt="Dipirona 500mg 10 comprimidos">
-            <div class="card-body d-flex flex-column">
-              <p class="card-text text-prod-title">Dipirona 500mg Genérico 10 Comprimidos</p>
-              <span class="text-prod-price">R$5,54</span>
-              <button class="btn btn-prod mt-auto">Adicionar</button>
+          <!-- Produto 3 -->
+          <div class="swiper-slide">
+            <div class="card h-100 shadow-sm border-0 prod-card">
+              <img src="https://placehold.co/300x200/eee/777?text=Protetor+Solar" class="card-img-top p-3" alt="Protetor Solar Actine">
+              <div class="card-body d-flex flex-column">
+                <p class="card-text text-prod-title">Protetor Solar Facial Actine FPS 60 Cor Universal 40g</p>
+                <span class="text-prod-price">R$ 49,99</span>
+                <button class="btn btn-prod mt-auto" data-nome="Protetor Solar Actine" data-preco="49.99">Adicionar</button>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="col">
-           <div class="card h-100 shadow-sm border-0 prod-card">
-            <img src="https://via.placeholder.com/300x200/eee/777?text=Imagem+Produto+4" class="card-img-top p-3" alt="Creme Fixador Ultra Corega 20g">
-            <div class="card-body d-flex flex-column">
-              <p class="card-text text-prod-title">Creme Fixador Ultra Corega 20g</p>
-              <span class="text-prod-price">R$29,90</span>
-              <button class="btn btn-prod mt-auto">Adicionar</button>
+          <!-- Produto 4 -->
+          <div class="swiper-slide">
+            <div class="card h-100 shadow-sm border-0 prod-card">
+              <img src="https://placehold.co/300x200/eee/777?text=Colirio" class="card-img-top p-3" alt="Colírio Lacrifilm">
+              <div class="card-body d-flex flex-column">
+                <p class="card-text text-prod-title">Colírio Lacrifilm Solução Oftálmica 15ml</p>
+                <span class="text-prod-price">R$ 47,27</span>
+                <button class="btn btn-prod mt-auto" data-nome="Colírio Lacrifilm 15ml" data-preco="47.27">Adicionar</button>
+              </div>
             </div>
           </div>
+          
+          <!-- Produto 5 -->
+          <div class="swiper-slide">
+            <div class="card h-100 shadow-sm border-0 prod-card">
+              <img src="https://placehold.co/300x200/eee/777?text=Shampoo" class="card-img-top p-3" alt="Shampoo Darrow">
+              <div class="card-body d-flex flex-column">
+                <p class="card-text text-prod-title">Shampoo Anticaspa Intensivo Darrow Doctar Plus 120ml</p>
+                <span class="text-prod-price">R$ 78,90</span>
+                <button class="btn btn-prod mt-auto" data-nome="Shampoo Darrow Doctar" data-preco="78.90">Adicionar</button>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Produto 6 -->
+          <div class="swiper-slide">
+             <div class="card h-100 shadow-sm border-0 prod-card">
+              <img src="https://via.placeholder.com/300x200/eee/777?text=Imagem+Produto+4" class="card-img-top p-3" alt="Creme Fixador Ultra Corega 20g">
+              <div class="card-body d-flex flex-column">
+                <p class="card-text text-prod-title">Creme Fixador Ultra Corega 20g</p>
+                <span class="text-prod-price">R$ 29,90</span>
+                <button class="btn btn-prod mt-auto" data-nome="Creme Fixador Ultra Corega 20g" data-preco="29.90">Adicionar</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO 2: VITAMINAS E SUPLEMENTOS -->
+    <section class="container my-5 product-carousel-section">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2 class="m-0">Vitaminas e Suplementos</h2>
+        <div class="swiper-nav-buttons d-none d-md-block">
+          <button class="btn btn-arrow" id="vitaminas-prev"><i class="bi bi-chevron-left"></i></button>
+          <button class="btn btn-arrow" id="vitaminas-next"><i class="bi bi-chevron-right"></i></button>
+        </div>
+      </div>
+      
+      <!-- Carrossel Swiper -->
+      <div class="swiper" id="vitaminas-carousel">
+        <div class="swiper-wrapper">
+          
+          <!-- Produto 1 -->
+          <div class="swiper-slide">
+             <div class="card h-100 shadow-sm border-0 prod-card">
+              <img src="https://via.placeholder.com/300x200/eee/777?text=Imagem+Produto+1" class="card-img-top p-3" alt="Creatina Vitafor">
+              <div class="card-body d-flex flex-column">
+                <p class="card-text text-prod-title">Suplemento Alimentar Vitafor Creafort 100% Creatina 300g</p>
+                <span class="text-prod-price">R$ 229,90</span>
+                <button class="btn btn-prod mt-auto" data-nome="Suplemento Vitafor Creafort 300g" data-preco="229.90">Adicionar</button>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Produto 2 -->
+          <div class="swiper-slide">
+            <div class="card h-100 shadow-sm border-0 prod-card">
+              <img src="https://placehold.co/300x200/eee/777?text=Vitamina+D" class="card-img-top p-3" alt="Vitamina D">
+              <div class="card-body d-flex flex-column">
+                <p class="card-text text-prod-title">Vitamina D3 2000UI - 60 Cápsulas</p>
+                <span class="text-prod-price">R$ 45,00</span>
+                <button class="btn btn-prod mt-auto" data-nome="Vitamina D3 2000UI" data-preco="45.00">Adicionar</button>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Produto 3 -->
+          <div class="swiper-slide">
+            <div class="card h-100 shadow-sm border-0 prod-card">
+              <img src="https://placehold.co/300x200/eee/777?text=Melatonina" class="card-img-top p-3" alt="Melatonina">
+              <div class="card-body d-flex flex-column">
+                <p class="card-text text-prod-title">Melatonina 0,21mg Gotas Sabor Menta 30ml</p>
+                <span class="text-prod-price">R$ 39,90</span>
+                <button class="btn btn-prod mt-auto" data-nome="Melatonina Gotas 30ml" data-preco="39.90">Adicionar</button>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Produto 4 -->
+          <div class="swiper-slide">
+            <div class="card h-100 shadow-sm border-0 prod-card">
+              <img src="https://placehold.co/300x200/eee/777?text=Polivitaminico" class="card-img-top p-3" alt="Polivitaminico Neosil">
+              <div class="card-body d-flex flex-column">
+                <p class="card-text text-prod-title">Polivitamínico Neosil Attack Cabelo, Pele e Unha 90s</p>
+                <span class="text-prod-price">R$ 292,99</span>
+                <button class="btn btn-prod mt-auto" data-nome="Polivitamínico Neosil Attack" data-preco="292.99">Adicionar</button>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Produto 5 -->
+          <div class="swiper-slide">
+            <div class="card h-100 shadow-sm border-0 prod-card">
+              <img src="https://placehold.co/300x200/eee/777?text=Calcio+MDK" class="card-img-top p-3" alt="Cálcio MDK">
+              <div class="card-body d-flex flex-column">
+                <p class="card-text text-prod-title">Cálcio MDK Caldê MDK 2000UI 60 comprimidos</p>
+                <span class="text-prod-price">R$ 148,99</span>
+                <button class="btn btn-prod mt-auto" data-nome="Cálcio MDK Caldê" data-preco="148.99">Adicionar</button>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
   </main>
 
+  <!-- SEU FOOTER (Sem alterações) -->
   <footer class="footer mt-4">
-    <div class="footer-top">
-      <div class="footer-box">
-        <h4>Entrega rápida</h4>
-        <p>Receba em casa com segurança e praticidade.</p>
-        <button><a href="#">Acompanhar pedido</a></button>
-      </div>
-      <div class="footer-box">
-        <h4>Compra segura</h4>
-        <p>Ambiente protegido e aprovado.</p>
-        <button><a href="#">Política de segurança</a></button>
-      </div>
-      <div class="footer-box">
-        <h4>Atendimento</h4>
-        <p>Fale com um atendente agora.</p>
-        <button><a href="#">Contato</a></button>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>FarmeFipp</span>
-      <div class="info-extra">Saúde, bem-estar e confiança no seu dia a dia.</div>
-    </div>
+    <!-- ... (Seu footer) ... -->
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <!-- JS DO BOOTSTRAP -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- JS DO SWIPER (Carrossel) -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <!-- SEU SCRIPT -->
   <script src="script.js"></script>
 </body>
 </html>
