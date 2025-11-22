@@ -20,6 +20,7 @@ body {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    scrollbar-width: none;
 }
 
 /* === HEADER / NAVBAR === */
@@ -33,9 +34,11 @@ body {
 
 .nav-item a {
     color: var(--secundary-color) !important;
-    font-size: 1.1rem; /* Usei 'rem' para acessibilidade */
+    font-size: 1.3rem; /* Usei 'rem' para acessibilidade */
     cursor: pointer;
     position: relative;
+    text-decoration: none;
+    font-weight: 600;
 }
 
 .nav-item a::after {
@@ -179,12 +182,6 @@ body {
 }
 
 /* Carrossel Customizado */
-.ctn-carroceu {
-    overflow: hidden;
-    padding: 10px;
-    width: 100%; /* Mais responsivo */
-    position: relative;
-}
 
 .img-prod img {
     /* height: 50%; */ /* Removido para a imagem ser responsiva */
@@ -197,10 +194,6 @@ body {
     transition-delay: 0.5s;
 }
 
-.ativa.img-prod img {
-    transform: translateX(0);
-    opacity: 1;
-}
 
 .img-prod {
     display: none;
@@ -210,62 +203,12 @@ body {
     transition: transform ease-in-out 0.7s, opacity ease-in-out 0.7s;
 }
 
-.ativa {
-    display: block; /* Trocado para 'block' */
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateX(0);
-}
 
-.ctn-slide {
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    gap: 5px;
-    padding: 10px;
-}
 
-.slide {
-    background-color: #aaa;
-    border: none;
-    border-radius: 5px;
-    padding: 5px;
-    transition: all 0.7s ease;
-}
 
-.ativar {
-    background-color: var(--secundary-color);
-    padding: 5px 30px;
-}
 
-.ctn-arrows {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    transform: translateY(-50%);
-    display: flex;
-    justify-content: space-between; /* Melhor que 'gap' e 'width' fixos */
-    padding: 0 1rem; /* Espaçamento das bordas */
-    z-index: 10;
-    pointer-events: none; /* Permite clicar 'através' do container */
-}
 
-.btn-arrows {
-    background-color: #fff;
-    border: 2px solid var(--primary-color);
-    border-radius: 50%;
-    padding: 10px;
-    font-size: 1.5rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    pointer-events: auto; /* Faz os botões clicáveis */
-}
-.btn-arrows:hover{
-    border:solid 2px var(--secundary-color);
-    background-color: #fce4ec;
-}
-
+/* === PRODUTOS CONFIG === */
 /* MELHORIA: 
   - Removi seu seletor '.prod'
   - Criei '.prod-card' para customizar o Card do Bootstrap
@@ -315,103 +258,6 @@ body {
     color: white;
 }
 
-
-/* === FOOTER CONFIG (Mantido) === */
-.footer {
-    background-color: #f5f5f5;
-    padding: 30px 20px;
-    font-family: sans-serif;
-    font-size: 14px;
-    color: #333;
-    border-top: 1px solid #ddd;
-}
-
-.footer-top {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding-bottom: 20px;
-}
-
-.footer-box {
-    width: 300px;
-    margin: 10px;
-    text-align: center; /* Centralizado */
-}
-
-.footer-box h4 i {
-    margin-bottom: 10px;
-    font-size: 16px;
-    color: #d12c36;
-    margin-right: 8px;
-}
-
-.footer-box button {
-    background-color: var(--primary-color);
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    height: 40px;
-    width: 200px;
-    font-size: 15px;
-    transition: transform 0.4s ease-in;
-}
-
-.footer-box button:hover {
-    background-color: #2752b6;
-    transform: scale(1.1);
-}
-
-.footer-box button a {
-    color: white;
-    text-decoration: none;
-}
-
-.footer-bottom {
-    text-align: center;
-    margin-top: 20px;
-    border-top: 1px solid #ddd;
-    padding-top: 20px;
-}
-
-/* ... (resto do seu CSS do footer) ... */
-.footer-bottom button {
-    margin-top: 10px;
-    padding: 8px 16px;
-   background-color: #90e0ef;
-    color: #023e8a;
-    border: none;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-}
-
-.footer-bottom span {
-    font-size: 1.5rem;
-    font-weight: bold;
-    background: linear-gradient(45deg, hsla(169, 100%, 39%, 1), hsla(203, 69%, 5%, 1));
-    background-size: 200% 200%;
-    animation: moveGradient 5s ease infinite;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-@keyframes moveGradient {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-.footer-bottom button:hover {
-    background-color: #48cae4;
-}
-
-.footer-bottom .info-extra {
-    margin-top: 10px;
-    font-size: 12px;
-    color: #666;
-}
 /*
   MELHORIA:
   Crie um NOVO arquivo 'login.css' e cole este conteúdo.
@@ -476,91 +322,6 @@ body.login-page {
 .divider {
     color: #999;
     font-size: 0.9rem;
-}
-/*
-  MELHORIA:
-  Crie um NOVO arquivo 'cadastro.css' e cole este conteúdo.
-  Ele contém APENAS os estilos do formulário.
-*/
-body.cadastro-page {
-     background: linear-gradient(to right, #e3f2fd, #fce4ec);
-     padding: 2rem 0;
-}
-
-.form-style {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: auto;
-}
-
-.conteiner-form {
-    background-color: #fff;
-    display: flex;
-    flex-direction: column;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    width: 100%;
-    max-width: 900px; /* Aumentado para formulários grandes */
-}
-
-.form-documents {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 10px;
-}
-
-.controller {
-    display: flex;
-    flex-direction: column;
-    width: 100%; /* Padrão mobile */
-    margin-bottom: 15px;
-}
-
-/* Em telas maiores, 2 colunas */
-@media (min-width: 768px) {
-    .controller {
-        width: 48%; /* Duas colunas com espaço */
-    }
-}
-
-.icon-controller {
-    display: flex;
-    align-items: center;
-    margin-bottom: 5px;
-    font-size: 18px;
-    color: var(--button-color);
-}
-
-.icons {
-    background-color: var(--textProd);
-    color: white; /* Adicionado */
-    padding: 10px 12px;
-    border-radius: 8px 0 0 8px;
-    display: flex; /* Adicionado */
-    align-items: center; /* Adicionado */
-    justify-content: center; /* Adicionado */
-}
-
-#email {
-    width: 100%; /* Corrigido */
-    padding: 10px;
-    border-radius: 0 8px 8px 0;
-    border: 1px solid #ccc;
-    font-size: 16px;
-}
-
-.input-style {
-    width: 100%; /* Corrigido */
-    padding: 10px;
-    border-radius: 0 8px 8px 0;
-    border: 1px solid #ccc;
-    font-size: 16px;
-    flex-grow: 1; /* Faz o input crescer */
 }
 
 /*

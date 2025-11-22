@@ -1,0 +1,110 @@
+body.cadastro-body {
+    background: linear-gradient(to right, #e3f2fd, #fce4ec);
+    scrollbar-width: none;
+    overflow-y: scroll;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+section{
+    margin-top: 5px;
+}
+.form-style {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    padding: 10px;
+}
+h1{
+    font-size: 2.5rem;
+    color: var(--primary-color) !important;
+    font-weight: 700 !important;
+}
+
+.conteiner{
+    width: 80%;
+}
+
+.form-documents {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.controller {
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Padrão mobile */
+    margin-bottom: 15px;
+}
+@media (min-width: 768px) {
+    .controller {
+        width: 48%; /* Duas colunas com espaço */
+    }
+}
+
+.icon-controller {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    font-size: 18px;
+    color: var(--button-color);
+}
+
+.icons {
+    background-color: var(--textProd);
+    color: white; /* Adicionado */
+    padding: 10px 12px;
+    border-radius: 8px 0 0 8px;
+    display: flex; /* Adicionado */
+    align-items: center; /* Adicionado */
+    justify-content: center; /* Adicionado */
+}
+
+#email {
+    width: 100%; /* Corrigido */
+    padding: 10.5px;
+    border-radius: 0 8px 8px 0;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.input-style {
+    width: 100%; /* Corrigido */
+    padding: 10.5px;
+    border-radius: 0 8px 8px 0;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    flex-grow: 1; /* Faz o input crescer */
+}
+.error{
+    display: none;
+}
+.sucess{
+    display: none;
+}
+.icon-error {
+    color: red;
+}
+.icon-true {
+    color: #78cf70;
+}
+.message-error{
+    color: red !important;
+    font-size: 14px;
+    margin-left: 5px;
+}
+.message-true{
+    color: #78cf70 !important;
+    font-size: 14px;
+    margin-left: 5px;
+}
+.input-style.msg-true{
+    border: #99ff8f 1px solid !important;
+}
+.input-style.msg-false{
+    border:red 1px solid !important;
+}

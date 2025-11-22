@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastro - FarmaFipp</title>
+  <link rel="stylesheet" href="../css/form.css" />
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.26.3/dist/sweetalert2.min.css
+" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body class="cadastro-body">
+  <header class="navbar navbar-expand-lg bg-white border-bottom sticky-top shadow-sm">
+    <div class="container">
+      <a class="logo" href="../index.html">FarmaFipp</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+        aria-controls="mainNav" aria-expanded="false" aria-label="Abrir navegação">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse d-flex gap-3 id="mainNav">
+        <ul class="navbar-nav me-auto">
+        </ul>
+        <div class="nav-item">
+          <a href="views/sobre.html">Sobre</a>
+        </div>
+
+        <div>
+        <a href="login.html"><button class="btn btn-danger">Já sou cadastrado</button></a>
+      </div>
+        
+      </div>
+    </div>
+  </header>
+
+
+  <section class="form-style">
+    <div class="d-flex flex-row justify-content-center align-items-center w-100 text-center">
+      <div class="d-flex row-g-3">
+        <i class="user-icon fas fa-user-plus" style="color: #1E2EDE;"></i>
+        <h1>Cadastre-se</h1>
+      </div>
+    </div>
+
+    <form action="" class="conteiner" id="form">
+      <div class="email ">
+        <label for="email">Email</label>
+        <div class="icon-controller">
+          <div class="icons">
+            <span><i class="fas fa-envelope"></i></span>
+          </div>
+          <input type="email" id="email" placeholder="Digite seu email" />
+        </div>
+        <div class="error">
+          <span class="icon-error"><i class="fas fa-exclamation-circle"></i></span>
+          <span class="message-error">mensagem erro</span>
+        </div>
+        <div class="sucess">
+          <span class="icons-true"><i class="bi bi-check-circle-fill"></i></span>
+          <span class="message-true">mensagem </span>
+        </div>
+      </div>
+      <div class="form-documents">
+        <div class="controller">
+          <label for="text">Nome</label>
+          <div class="icon-controller">
+            <div class="icons">
+              <span><i class="fas fa-id-card"></i></span>
+            </div>
+            <input type="text" id="nome" class="input-style" placeholder="Digite seu nome completo" />
+          </div>
+          <div class="error">
+            <span class="icon-error"><i class="fas fa-exclamation-circle"></i></span>
+            <span class="message-error">mensagem erro</span>
+          </div>
+          <div class="sucess">
+            <span class="icons-true"><i class="bi bi-check-circle-fill"></i></span>
+            <span class="message-true">mensagem </span>
+          </div>
+        </div>
+        <div class="controller">
+          <label for="text">Sobrenome</label>
+          <div class="icon-controller">
+            <div class="icons">
+              <span><i class="fas fa-id-card"></i></span>
+            </div>
+            <input type="text" id="sobrenome" class="input-style" placeholder="Digite seu sobrenome" />
+          </div>
+          <div class="error">
+            <span class="icon-error"><i class="fas fa-exclamation-circle"></i></span>
+            <span class="message-error">mensagem erro</span>
+          </div>
+          <div class="sucess">
+            <span class="icons-true"><i class="bi bi-check-circle-fill"></i></span>
+            <span class="message-true">mensagem </span>
+          </div>
+        </div>
+      </div>
+      <div class="form-documents">
+        <div class="controller">
+          <label for="rg">RG</label>
+          <div class="icon-controller">
+            <div class="icons">
+              <span><i class="fas fa-id-card"></i></span>
+            </div>
+            <input type="text" id="rg" class="input-style" placeholder="Digite seu RG"
+              onkeypress="mascara('##.###.###-#',this,event)"  max="12"/>
+          </div>
+          <div class="error">
+            <span class="icon-error"><i class="fas fa-exclamation-circle"></i></span>
+            <span class="message-error">mensagem erro</span>
+          </div>
+          <div class="sucess">
+            <span class="icons-true"><i class="bi bi-check-circle-fill"></i></span>
+            <span class="message-true">mensagem </span>
+          </div>
+        </div>
+
+        <div class="controller">
+          <label for="cpf">CPF</label>
+          <div class="icon-controller">
+            <div class="icons">
+              <span><i class="fas fa-id-card"></i></span>
+            </div>
+            <input type="text" id="cpf" class="input-style" placeholder="Digite seu CPF"
+              onkeypress="mascara('###.###.###-##',this,event)" maxlength="14" />
+          </div>
+          <div class="error">
+            <span class="icon-error"><i class="fas fa-exclamation-circle"></i></span>
+            <span class="message-error">mensagem erro</span>
+          </div>
+          <div class="sucess">
+            <span class="icons-true"><i class="bi bi-check-circle-fill"></i></span>
+            <span class="message-true">mensagem </span>
+          </div>
+        </div>
+      </div>
+      <div class="form-documents">
+        <div class="controller">
+          <label for="birthdate">Data de Nascimento</label>
+          <div class="icon-controller">
+            <div class="icons">
+              <span><i class="fas fa-calendar-alt"></i></span>
+            </div>
+            <input type="date" id="birthdate" class="input-style" placeholder="DD/MM/AAAA"
+              onkeypress="mascara('##/##/####',this,event)" />
+          </div>
+          <div class="error">
+            <span class="icon-error"><i class="fas fa-exclamation-circle"></i></span>
+            <span class="message-error">mensagem erro</span>
+          </div>
+          <div class="sucess">
+            <span class="icons-true"><i class="bi bi-check-circle-fill"></i></span>
+            <span class="message-true">mensagem </span>
+          </div>
+        </div>
+        <div class="controller">
+          <label for="phone">Telefone</label>
+          <div class="icon-controller">
+            <div class="icons">
+              <span><i class="fas fa-phone"></i></span>
+            </div>
+            <input type="text" id="phone" class="input-style" placeholder="Digite seu telefone"
+              onkeypress="mascara('(##) #####-####',this,event)" maxlength="15" />
+          </div>
+          <div class="error">
+            <span class="icon-error"><i class="fas fa-exclamation-circle"></i></span>
+            <span class="message-error">mensagem erro</span>
+          </div>
+          <div class="sucess">
+            <span class="icons-true"><i class="bi bi-check-circle-fill"></i></span>
+            <span class="message-true">mensagem </span>
+          </div>
+        </div>
+      </div>
+      <div class="form-documents">
+        <div class="controller">
+          <label for="address">Endereço</label>
+          <div class="icon-controller">
+            <div class="icons">
+              <span><i class="fas fa-home"></i></span>
+            </div>
+            <input type="text" id="address" class="input-style" placeholder="Digite seu endereço completo" />
+          </div>
+          <div class="error">
+            <span class="icon-error"><i class="fas fa-exclamation-circle"></i></span>
+            <span class="message-error">mensagem erro</span>
+          </div>
+          <div class="sucess">
+            <span class="icons-true"><i class="bi bi-check-circle-fill"></i></span>
+            <span class="message-true">mensagem </span>
+          </div>
+        </div>
+        <div class="controller">
+          <label for="number">Número</label>
+          <div class="icon-controller">
+            <div class="icons">
+              <span><i class="fas fa-hashtag"></i></span>
+            </div>
+            <input type="text" id="number" class="input-style" placeholder="Número" />
+          </div>
+          <div class="error">
+            <span class="icon-error"><i class="fas fa-exclamation-circle"></i></span>
+            <span class="message-error">mensagem erro</span>
+          </div>
+          <div class="sucess">
+            <span class="icons-true"><i class="bi bi-check-circle-fill"></i></span>
+            <span class="message-true">mensagem </span>
+          </div>
+        </div>
+        <div class="controller">
+          <label for="city">Cidade</label>
+          <div class="icon-controller">
+            <div class="icons">
+              <span><i class="fas fa-city"></i></span>
+            </div>
+            <input type="text" id="city" class="input-style" placeholder="Digite sua cidade" />
+          </div>
+          <div class="error">
+            <span class="icon-error"><i class="fas fa-exclamation-circle"></i></span>
+            <span class="message-error">mensagem erro</span>
+          </div>
+          <div class="sucess">
+            <span class="icons-true"><i class="bi bi-check-circle-fill"></i></span>
+            <span class="message-true">mensagem </span>
+          </div>
+        </div>
+        <div class="controller">
+          <label for="text">Complemento</label>
+          <div class="icon-controller">
+            <div class="icons">
+              <span><i class="fas fa-home"></i></span>
+            </div>
+            <input type="text" id="complement" class="input-style" placeholder="Complemento (opcional)" />
+          </div>
+          <div class="error">
+            <span class="icon-error"><i class="fas fa-exclamation-circle"></i></span>
+            <span class="message-error">mensagem erro</span>
+          </div>
+          <div class="sucess">
+            <span class="icons-true"><i class="bi bi-check-circle-fill"></i></span>
+            <span class="message-true">mensagem </span>
+          </div>
+        </div>
+        <div class="controller">
+          <label for="cep">CEP</label>
+          <div class="icon-controller">
+            <div class="icons">
+              <span><i class="fas fa-map-marker-alt"></i></span>
+            </div>
+            <input type="text" id="cep" class="input-style" placeholder="Digite seu CEP"
+              onkeypress="mascara('#####-###',this,event)" maxlength="9" />
+          </div>
+          <div class="error">
+            <span class="icon-error"><i class="fas fa-exclamation-circle"></i></span>
+            <span class="message-error">mensagem erro</span>
+          </div>
+          <div class="sucess">
+            <span class="icons-true"><i class="bi bi-check-circle-fill"></i></span>
+            <span class="message-true">mensagem </span>
+          </div>
+        </div>
+        <div class="controller">
+          <label for="text">Gênero</label>
+          <div class="icon-controller">
+            <div class="icons">
+              <span><i class="fas fa-map-marker-alt"></i></span>
+            </div>
+            <select id="gender" class="input-style">
+              <option value="">Selecione seu gênero</option>
+              <option value="masculino">Masculino</option>
+              <option value="feminino">Feminino</option>
+              <option value="outro">Outro</option>
+            </select>
+          </div>
+          <div class="error">
+            <span class="icon-error"><i class="fas fa-exclamation-circle"></i></span>
+            <span class="message-error">mensagem erro</span>
+          </div>
+          <div class="sucess">
+            <span class="icons-true"><i class="bi bi-check-circle-fill"></i></span>
+            <span class="message-true">mensagem </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-documents">
+        <div class="controller">
+          <label for="password">Senha</label>
+          <div class="icon-controller">
+            <div class="icons">
+              <span><i class="fas fa-lock"></i></span>
+            </div>
+            <input type="password" id="password" class="input-style" placeholder="Digite sua senha" />
+          </div>
+          <div class="error">
+            <span class="icon-error"><i class="fas fa-exclamation-circle"></i></span>
+            <span class="message-error">Mensagem erro</span>
+          </div>
+          <div class="sucess">
+            <span class="icons-true"><i class="bi bi-check-circle-fill"></i></span>
+            <span class="message-true">mensagem </span>
+          </div>
+        </div>
+
+        <div class="controller">
+          <label for="confirm-password">Confirmar Senha</label>
+          <div class="icon-controller">
+            <div class="icons">
+              <span><i class="fas fa-lock"></i></span>
+            </div>
+            <input type="password" id="cPassword" class="input-style" placeholder="Confirme sua senha" />
+          </div>
+          <div class="error">
+            <span class="icon-error"><i class="fas fa-exclamation-circle"></i></span>
+            <span class="message-error"></span>
+          </div>
+          <div class="sucess">
+            <span class="icons-true"><i class="bi bi-check-circle-fill"></i></span>
+            <span class="message-true">mensagem </span>
+          </div>
+        </div>
+        <div class="d-flex row-g-3 gap-3 justify-content-end w-100 p-2">
+          <div>
+            <input type="submit" value="Cadastrar" class="btn btn-primary" />
+          </div>
+          <div>
+            <a href="index.html"><button class="btn btn-danger">Voltar</button></a>
+          </div>
+
+        </div>
+      </div>
+    </form>
+  </section>
+  <!-- JS - Máscaras e validação -->
+  <script src="../js/valida.js"></script>
+</body>
+
+</html>
