@@ -4,7 +4,7 @@ var produtos = [ // variavel a onde vai ficar os itens
         nome: "Dipirona",
         fornecedor: "Ryan Transportes",
         estoque: 1000,
-        data: "12/12/2025",
+        data: "12-12-2025",
         preco: 4.50
     }
 ]
@@ -78,11 +78,29 @@ function montarTabela(){
                 <td>${item.estoque}</td>
                 <td>${item.data}</td>
                 <td>R$ ${item.preco}</td>
-                <td><input type="checkbox" id="btn-check"></td>
+                <td>Excluir linha <input type="checkbox" id="btn-check" onclick="excluirTab(${item.id})"></td>
             </tr>
         `
     }
     tbody.innerHTML = html
+}
+function excluirTab(idItem){
+    let aux = []
+
+    for(let i =0; i < produtos.length;i++){
+        if(produtos[i].id != idItem){
+            aux.push(produtos[i])
+        }
+    }
+
+    produtos = aux
+    montarTabela()
+}
+function excluirTudo(){
+    let aux = []
+    produtos = aux
+    montarTabela()
+    
 }
 form.addEventListener("submit",(e)=>{
     e.preventDefault()

@@ -76,22 +76,22 @@
         usuario.style.border = "red 1px solid"
         senha.style.border = "red 1px solid"
       } else {
-        if (!usuario.value === "admin" && !senha.value === "admin") {
+        if (usuario.value === "admin" && senha.value === "admin") {
           Swal.fire({
-            title: "Login bem sucedido!",
-            icon: "success",
-            draggable: true
-          }).then(() => {
-            window.location.href = "../index.html"; // redireciona depois do alerta
-          });
-        }
-        Swal.fire({
             title: "Uau! Temos um administrador na área!",
             text:"Seja muito bem vindo",
             icon: "success",
             draggable: true
           }).then(() => {
             window.location.href = "addProdutos.html"; // redireciona depois do alerta
+          });
+        }
+       Swal.fire({
+            title: "Login bem sucedido!",
+            icon: "success",
+            draggable: true
+          }).then(() => {
+            window.location.href = "../index.html"; // redireciona depois do alerta
           });
 
       }

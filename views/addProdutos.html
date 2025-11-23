@@ -60,7 +60,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.26.3/dist/sweetalert2.min.css
                         <span class="message-error">mensagem erro</span>
                     </div>
                     <div class="sucess">
-                        <span class="icons-true"><i class="bi bi-check-circle-fill"></i></span>
+                        <span class="icons-true"><i class="fas fa-check-circle"></i></span>
                         <span class="message-true">mensagem </span>
                     </div>
                 </div>
@@ -77,7 +77,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.26.3/dist/sweetalert2.min.css
                         <span class="message-error">mensagem erro</span>
                     </div>
                     <div class="sucess">
-                        <span class="icons-true"><i class="bi bi-check-circle-fill"></i></span>
+                        <span class="icons-true"><i class="fas fa-check-circle"></i></span>
                         <span class="message-true">mensagem </span>
                     </div>
                 </div>
@@ -97,7 +97,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.26.3/dist/sweetalert2.min.css
                         <span class="message-error">mensagem erro</span>
                     </div>
                     <div class="sucess">
-                        <span class="icons-true"><i class="bi bi-check-circle-fill"></i></span>
+                        <span class="icons-true"><i class="fas fa-check-circle"></i></span>
                         <span class="message-true">mensagem </span>
                     </div>
                 </div>
@@ -115,7 +115,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.26.3/dist/sweetalert2.min.css
                         <span class="message-error">mensagem erro</span>
                     </div>
                     <div class="sucess">
-                        <span class="icons-true"><i class="bi bi-check-circle-fill"></i></span>
+                        <span class="icons-true"><i class="fas fa-check-circle"></i></span>
                         <span class="message-true">mensagem </span>
                     </div>
                 </div>
@@ -133,7 +133,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.26.3/dist/sweetalert2.min.css
                         <span class="message-error">mensagem erro</span>
                     </div>
                     <div class="sucess">
-                        <span class="icons-true"><i class="bi bi-check-circle-fill"></i></span>
+                        <span class="icons-true"><i class="fas fa-check-circle"></i></span>
                         <span class="message-true">mensagem </span>
                     </div>
                 </div>
@@ -148,6 +148,12 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.26.3/dist/sweetalert2.min.css
                 </div>
             </div>
         </form>
+        <div class="d-flex flex-row justify-content-center align-items-center w-100 text-center">
+            <div class="d-flex row-g-3">
+                <i class="user-icon fas fa-user-plus" style="color: #1E2EDE;"></i>
+                <h1>Tabela de Produtos</h1>
+            </div>
+        </div>
         <table class="table">
   <thead>
     <tr>
@@ -157,7 +163,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.26.3/dist/sweetalert2.min.css
       <th scope="col">Estoque</th>
       <th scope="col">Data de validade</th>
       <th scope="col">Preço unitario</th>
-      <th scope="col"><input type="checkbox" id="btn-checkAll"></th>
+      <th scope="col">Excluir tudo <input type="checkbox" id="btn-checkAll" onclick="excluirTudo()"></th>
     </tr>
   </thead>
   <tbody id="tbody">

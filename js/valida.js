@@ -6,7 +6,6 @@ const vCep = /^\d{5}-\d{3}$/;
 const vRg = /^\d{2}(\.\d{3}){2}-?\d{1}$/
 
 const form = document.getElementById("form")
-const formLogin = document.getElementById("form-login")
 var corCompleta = "#78cf70"
 var corIncompleta = "#eff70b"
 var formularioValidado = true
@@ -41,11 +40,6 @@ form.addEventListener("submit", (e) => {
 
 	validarInput()
 	enviarFormulario()
-})
-formLogin.addEventListener("submit",(e)=>{
-	e.preventDefault()
-	validarCPF()
-	enviarLogin
 })
 function validarInput() {
 
@@ -106,7 +100,7 @@ function validarInput() {
 function enviarFormulario() {
 	if (formularioValidado === true) {
 		Swal.fire({
-			title: "Cadastro evetuado com sucesso!",
+			title: "Cadastro efetuado com sucesso!",
 			icon: "success",
 			draggable: true
 		}).then(() => {

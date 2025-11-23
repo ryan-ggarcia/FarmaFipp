@@ -1,3 +1,4 @@
+
 body.cadastro-body {
     background: linear-gradient(to right, #e3f2fd, #fce4ec);
     scrollbar-width: none;
@@ -89,7 +90,7 @@ h1{
 .icon-error {
     color: red;
 }
-.icon-true {
+.icons-true {
     color: #78cf70;
 }
 .message-error{
