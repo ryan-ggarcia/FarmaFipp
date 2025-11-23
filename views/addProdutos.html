@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro - FarmaFipp</title>
+    <link rel="stylesheet" href="../css/form.css" />
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.26.3/dist/sweetalert2.min.css
+" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body class="cadastro-body">
+    <header class="navbar navbar-expand-lg bg-white border-bottom sticky-top shadow-sm">
+        <div class="container">
+            <a class="logo" href="../index.html">FarmaFipp</a>
+
+            <div class="collapse navbar-collapse d-flex gap-3 id=" mainNav">
+                <ul class="navbar-nav me-auto">
+                </ul>
+                <div class="nav-item">
+                    <a href="views/sobre.html">Sobre</a>
+                </div>
+
+                <div>
+                    <a href="login.html"><button class="btn btn-danger">Já sou cadastrado</button></a>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+
+    <section class="form-style">
+        <div class="d-flex flex-row justify-content-center align-items-center w-100 text-center">
+            <div class="d-flex row-g-3">
+                <i class="user-icon fas fa-user-plus" style="color: #1E2EDE;"></i>
+                <h1>Cadastrar Produto</h1>
+            </div>
+        </div>
+
+        <form action="" class="conteiner" id="form">
+            </div>
+            <div class="form-documents">
+                <div class="controller">
+                    <label for="text">Nome do Produto</label>
+                    <div class="icon-controller">
+                        <div class="icons">
+                            <span><i class="fas fa-id-card"></i></span>
+                        </div>
+                        <input type="text" id="nome" class="input-style" placeholder="Digite o nome do produto" />
+                    </div>
+                    <div class="error">
+                        <span class="icon-error"><i class="fas fa-exclamation-circle"></i></span>
+                        <span class="message-error">mensagem erro</span>
+                    </div>
+                    <div class="sucess">
+                        <span class="icons-true"><i class="bi bi-check-circle-fill"></i></span>
+                        <span class="message-true">mensagem </span>
+                    </div>
+                </div>
+                <div class="controller">
+                    <label for="text">Fornecedor</label>
+                    <div class="icon-controller">
+                        <div class="icons">
+                            <span><i class="fas fa-id-card"></i></span>
+                        </div>
+                        <input type="text" id="Fornecedor" class="input-style" placeholder="Fornecedor aqui" />
+                    </div>
+                    <div class="error">
+                        <span class="icon-error"><i class="fas fa-exclamation-circle"></i></span>
+                        <span class="message-error">mensagem erro</span>
+                    </div>
+                    <div class="sucess">
+                        <span class="icons-true"><i class="bi bi-check-circle-fill"></i></span>
+                        <span class="message-true">mensagem </span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-documents">
+                <div class="controller">
+                    <label for="rg">Quantidade em estoque</label>
+                    <div class="icon-controller">
+                        <div class="icons">
+                            <span><i class="fas fa-id-card"></i></span>
+                        </div>
+                        <input type="text" id="quant" class="input-style"
+                            placeholder="Digite Quantidade em estoque" />
+                    </div>
+                    <div class="error">
+                        <span class="icon-error"><i class="fas fa-exclamation-circle"></i></span>
+                        <span class="message-error">mensagem erro</span>
+                    </div>
+                    <div class="sucess">
+                        <span class="icons-true"><i class="bi bi-check-circle-fill"></i></span>
+                        <span class="message-true">mensagem </span>
+                    </div>
+                </div>
+
+                <div class="controller">
+                    <label for="cpf">Data de validade</label>
+                    <div class="icon-controller">
+                        <div class="icons">
+                            <span><i class="fas fa-id-card"></i></span>
+                        </div>
+                        <input type="date" id="data" class="input-style" placeholder="Data de validade" />
+                    </div>
+                    <div class="error">
+                        <span class="icon-error"><i class="fas fa-exclamation-circle"></i></span>
+                        <span class="message-error">mensagem erro</span>
+                    </div>
+                    <div class="sucess">
+                        <span class="icons-true"><i class="bi bi-check-circle-fill"></i></span>
+                        <span class="message-true">mensagem </span>
+                    </div>
+                </div>
+
+                <div class="controller">
+                    <label for="cpf">Preço unitario</label>
+                    <div class="icon-controller">
+                        <div class="icons">
+                            <span><i class="fas fa-id-card"></i></span>
+                        </div>
+                        <input type="text" id="preco" class="input-style" placeholder="Digite o preço unitario" />
+                    </div>
+                    <div class="error">
+                        <span class="icon-error"><i class="fas fa-exclamation-circle"></i></span>
+                        <span class="message-error">mensagem erro</span>
+                    </div>
+                    <div class="sucess">
+                        <span class="icons-true"><i class="bi bi-check-circle-fill"></i></span>
+                        <span class="message-true">mensagem </span>
+                    </div>
+                </div>
+                <div class="d-flex row-g-3 gap-3 justify-content-end w-100 p-2">
+                    <div>
+                        <input type="submit" value="Adicionar" class="btn btn-primary" />
+                    </div>
+                    <div>
+                        <a href="index.html"><button class="btn btn-danger">Voltar</button></a>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+        <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Fornecedor</th>
+      <th scope="col">Estoque</th>
+      <th scope="col">Data de validade</th>
+      <th scope="col">Preço unitario</th>
+      <th scope="col"><input type="checkbox" id="btn-checkAll"></th>
+    </tr>
+  </thead>
+  <tbody id="tbody">
+    
+  </tbody>
+</table>
+    </section>
+    <!-- JS - Máscaras e validação -->
+    <script src="../js/checkBox.js"></script>
+</body>
+
+</html>
