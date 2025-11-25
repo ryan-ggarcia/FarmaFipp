@@ -1,16 +1,8 @@
-/* MELHORIA: 
-  Este é seu novo 'style.css' global.
-  - Mantém suas variáveis de cor.
-  - Contém estilos da INDEX e do FOOTER.
-  - Removi todo o CSS de login e cadastro (que irão para arquivos próprios).
-  - Removi seletores de layout customizados (ex: .prod) que foram 
-    substituídos por 'cards' do Bootstrap.
-*/
-
 :root {
     --primary-color: #1E2EDE;
     --azul: #00bbf9;
-    --secundary-color: #ee0000; /* Vermelho FarmeFipp */
+    --secundary-color: #ee0000;
+    /* Vermelho FarmeFipp */
     --button-color: #d3d3d3;
     --textProd: #505050;
 }
@@ -34,7 +26,8 @@ body {
 
 .nav-item a {
     color: var(--secundary-color) !important;
-    font-size: 1.3rem; /* Usei 'rem' para acessibilidade */
+    font-size: 1.3rem;
+    /* Usei 'rem' para acessibilidade */
     cursor: pointer;
     position: relative;
     text-decoration: none;
@@ -57,7 +50,8 @@ body {
 }
 
 .pesquisa input {
-    width: 350px; /* Um pouco menor para caber melhor */
+    width: 350px;
+    /* Um pouco menor para caber melhor */
     border-radius: 20px;
     border: none;
     background-color: #eee;
@@ -90,54 +84,115 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 80vh;
-    padding-top: 15px;
+    width: 100%;
+    height: auto;
+    padding: 10px;
     background: linear-gradient(to right, #e3f2fd, #fce4ec);
 }
 
 /* Categorias (Scroller Horizontal) */
-.conteiner-info {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start; /* Alinhado ao início */
+
+section .categories {
     width: 100%;
+    height: auto;
+    margin: 20px 0;
     overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-color: var(--azul) #f0f0f0;
-    gap: 1rem; /* Espaçamento */
-    padding: 10px 0;
+    padding-bottom: 10px;
+}
+
+.categoria legend {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.conteiner-cat {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: 5px;
+}
+
+.cat-single {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex: 1 1 120px;
+    text-align: center;
+    background-color: #fff;
+    padding: 30px 35px;
+    border-radius: 18px;
+    border: 1px solid #eee;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.cat-single i,img{
+    padding: 5px 10px;
+    font-size: 24px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.6s ease;
+}
+.cat-single:hover{
+    transform: scale(1.1);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.cat-single:hover i{
+    background-color: var(--button-color);
+}
+.cat-single:hover img{
+    background-color: var(--button-color);
 }
 
 
-.btn-modal-login, .btn-modal-register {
-    border-radius: 50px; 
+/* Faz a section de categorias usar 100% e permitir espaçamento */
+.categoria {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0 1rem;
+    box-sizing: border-box;
+}
+
+.btn-modal-login,
+.btn-modal-register {
+    border-radius: 50px;
     padding: 12px 20px;
     font-size: 1.1rem;
     font-weight: 600;
     text-decoration: none;
     transition: all 0.2s ease;
-    border: 2px solid transparent; 
+    border: 2px solid transparent;
 }
 
 
 .btn-modal-login {
-    background-color: var(--secundary-color); 
+    background-color: var(--secundary-color);
     color: white;
 }
+
 .btn-modal-login:hover {
-    background-color: #c40000; 
+    background-color: #c40000;
     color: white;
 }
 
 
 .btn-modal-register {
     background-color: white;
-    color: var(--secundary-color); /* Texto vermelho */
-    border-color: #eee; /* Borda cinza-clara */
+    color: var(--secundary-color);
+    /* Texto vermelho */
+    border-color: #eee;
+    /* Borda cinza-clara */
 }
+
 .btn-modal-register:hover {
-    background-color: #f8f9fa; /* Um cinza leve no hover */
+    background-color: #f8f9fa;
+    /* Um cinza leve no hover */
     border-color: #ddd;
 }
 
@@ -147,44 +202,21 @@ body {
 
 /* Estilo para o novo botão de Login na navbar */
 .btn-login-nav {
-    border-radius: 50px; /* Isso cria a borda bem arredondada */
-    padding: 8px 16px;   /* Um padding customizado (ajuste se preferir) */
+    border-radius: 50px;
+    /* Isso cria a borda bem arredondada */
+    padding: 8px 16px;
+    /* Um padding customizado (ajuste se preferir) */
     font-weight: 600;
     font-size: 0.9rem;
-    line-height: 1.2;  /* Garante que o ícone e o texto alinhem bem */
-}
-
-/* A cor vermelha (background-color: #ee0000;) 
-   já está sendo aplicada pela classe 'btn-danger' do Bootstrap, 
-   que usa sua variável '--secundary-color' se você a configurou corretamente.
-*/
-
-.info {
-    background-color: #90e0ef;
-    height: 75px;
-    width: 150px;
-    min-width: 150px; /* Garante que não encolha */
-    text-align: center;
-    border-radius: 20px;
-    color: #023e8a;
-    transition: background-color 0.1s ease;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center; /* Centraliza o texto */
-    flex: 0 0 auto;
-    scroll-snap-align: start;
-    font-weight: bold;
-}
-
-.info:hover {
-    background-color: #48cae4;
+    line-height: 1.2;
+    /* Garante que o ícone e o texto alinhem bem */
 }
 
 /* Carrossel Customizado */
 
 .img-prod img {
-    /* height: 50%; */ /* Removido para a imagem ser responsiva */
+    /* height: 50%; */
+    /* Removido para a imagem ser responsiva */
     width: 100%;
     border-radius: 18px;
     /* Animações mantidas */
@@ -204,33 +236,28 @@ body {
 }
 
 
-
-
-
-
-/* === PRODUTOS CONFIG === */
-/* MELHORIA: 
-  - Removi seu seletor '.prod'
-  - Criei '.prod-card' para customizar o Card do Bootstrap
-*/
 .prod-card {
     transition: all 0.2s ease;
 }
 
 .prod-card:hover {
-    transform: translateY(-5px); /* Efeito de 'levantar' */
+    transform: translateY(-5px);
+    /* Efeito de 'levantar' */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
 }
 
 .prod-card .card-img-top {
-    max-height: 200px; /* Limita altura da imagem */
-    object-fit: contain; /* Garante que a imagem caiba */
+    max-height: 200px;
+    /* Limita altura da imagem */
+    object-fit: contain;
+    /* Garante que a imagem caiba */
 }
 
 .text-prod-title {
     font-size: 0.9rem;
     color: var(--textProd);
-    flex-grow: 1; /* Faz o texto preencher o espaço, alinhando botões */
+    flex-grow: 1;
+    /* Faz o texto preencher o espaço, alinhando botões */
 }
 
 .text-prod-price {
@@ -250,7 +277,8 @@ body {
     font-weight: 600;
     transition: all 0.3s ease;
     cursor: pointer;
-    width: 100%; /* Ocupa toda a largura do card-body */
+    width: 100%;
+    /* Ocupa toda a largura do card-body */
 }
 
 .btn-prod:hover {
@@ -258,6 +286,67 @@ body {
     color: white;
 }
 
+footer{
+    background-color: #fff;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+    background-color: #faf8f8;
+}
+.conteiner-footer{
+    display: flex;
+    flex-direction: row !important;
+    justify-content: space-around;
+    align-items: center;
+}
+.footer-itens{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    flex-direction: column;
+}
+.footer-itens p{
+    color: #818181;
+}
+.footer-itens h4{
+    font-weight: 700;
+}
+.footer-itens div ul,li{
+    list-style: none;
+    padding: 0;
+    color: #818181;
+}
+.footer-itens div ul li i{
+    color: var(--secundary-color);
+}
+.footer-itens div ul li a{
+    text-decoration: none;
+    color: #818181;
+}
+.redersSociais{
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+}
+.redesSociais a{
+    background-color: #fff;
+    color: black;
+    border-radius: 50%;
+    font-size: 24px;
+    padding: 10px 12px;
+    transition: all 0.6s ease;
+}
+.redesSociais a:hover{
+    background-color: var(--secundary-color);
+    box-shadow: var(--secundary-color) 0px 2px 8px 0px;
+    color: white;
+}
+.direitos{
+    text-align: center;
+}
 /*
   MELHORIA:
   Crie um NOVO arquivo 'login.css' e cole este conteúdo.
@@ -274,7 +363,7 @@ body.login-page {
 .login-card {
     background-color: white;
     border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .btn-login-social {
@@ -286,6 +375,7 @@ body.login-page {
     font-size: 1.2rem;
     transition: all 0.2s ease;
 }
+
 .btn-login-social:hover {
     background-color: #f0f0f0;
     color: #111;
@@ -295,7 +385,8 @@ body.login-page {
 .btn-login {
     background-color: var(--secundary-color);
     color: white;
-    padding: 12px; /* Ajustado */
+    padding: 12px;
+    /* Ajustado */
     border: none;
     border-radius: 30px;
     font-size: 1.1rem;
@@ -310,11 +401,13 @@ body.login-page {
 }
 
 .forgot a {
-    text-decoration: none; /* Sublinhado só no hover */
+    text-decoration: none;
+    /* Sublinhado só no hover */
     color: var(--primary-color);
     font-weight: bold;
     font-size: 0.9rem;
 }
+
 .forgot a:hover {
     text-decoration: underline;
 }
@@ -331,36 +424,37 @@ body.login-page {
 */
 
 body.sobre-page {
-  background: linear-gradient(to right, #e3f2fd, #fce4ec);
+    background: linear-gradient(to right, #e3f2fd, #fce4ec);
 }
 
 #main-sobre section {
-  margin-bottom: 3rem;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease;
+    margin-bottom: 3rem;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
 }
 
 #main-sobre section.reveal {
-  opacity: 1;
-  transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
 }
 
 #main-sobre .h1 h1 {
-  font-size: 2.2rem;
-  color: var(--secundary-color); /* Usando sua variável global */
-  margin-bottom: 1rem;
+    font-size: 2.2rem;
+    color: var(--secundary-color);
+    /* Usando sua variável global */
+    margin-bottom: 1rem;
 }
 
 .text-content {
-  background-color: white;
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  font-size: 1.1rem;
-  line-height: 1.6;
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    font-size: 1.1rem;
+    line-height: 1.6;
 }
 
 .text-content ol {
-  padding-left: 1.5rem;
+    padding-left: 1.5rem;
 }
