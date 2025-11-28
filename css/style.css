@@ -24,6 +24,38 @@ body {
     color: var(--secundary-color) !important;
 }
 
+@media (max-width: 768px) {
+    .logo {
+        font-size: 1.3rem;
+    }
+
+    .nav-item a {
+        font-size: 1rem;
+    }
+
+    .navbar-toggler:focus {
+        box-shadow: none !important;
+    }
+
+    .navbar-toggler i {
+        transition: transform 0.3s ease;
+    }
+
+    .navbar-toggler[aria-expanded="true"] i {
+        transform: rotate(90deg);
+    }
+
+    #mainNav.collapse {
+        display: none !important;
+    }
+
+    #mainNav.collapse.show {
+        display: flex !important;
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
 .nav-item a {
     color: var(--secundary-color) !important;
     font-size: 1.3rem;
@@ -92,29 +124,12 @@ body {
 
 /* Categorias (Scroller Horizontal) */
 
-section .categories {
-    width: 100%;
-    height: auto;
-    margin: 20px 0;
-    overflow-x: auto;
-    padding-bottom: 10px;
-}
 
 .categoria legend {
     font-size: 2.5rem;
     font-weight: 700;
     color: var(--primary-color);
     text-align: center;
-}
-
-.conteiner-cat {
-    display: flex;
-    width: 100%;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 1rem;
-    flex-wrap: wrap;
-    padding: 5px;
 }
 
 .cat-single {
@@ -130,21 +145,26 @@ section .categories {
     transition: all 0.3s ease;
     cursor: pointer;
 }
-.cat-single i,img{
+
+.cat-single i,
+.cat-single img {
     padding: 5px 10px;
     font-size: 24px;
     border-radius: 50%;
     cursor: pointer;
     transition: all 0.6s ease;
 }
-.cat-single:hover{
+
+.cat-single:hover {
     transform: scale(1.1);
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
-.cat-single:hover i{
+
+.cat-single:hover i {
     background-color: var(--button-color);
 }
-.cat-single:hover img{
+
+.cat-single:hover img {
     background-color: var(--button-color);
 }
 
@@ -213,35 +233,36 @@ section .categories {
 }
 
 /* Carrossel Customizado */
-
-.img-prod img {
-    /* height: 50%; */
-    /* Removido para a imagem ser responsiva */
+.swiper {
     width: 100%;
-    border-radius: 18px;
-    /* Animações mantidas */
-    transform: translateX(400px);
-    opacity: 0;
-    transition: transform ease-in-out 0.6s, opacity ease 0.6s;
-    transition-delay: 0.5s;
+    height: 25%;
 }
 
-
-.img-prod {
-    display: none;
-    opacity: 0;
-    position: relative;
-    transform: translateX(100vw);
-    transition: transform ease-in-out 0.7s, opacity ease-in-out 0.7s;
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.swiper-pagination {
+    color: var(--secundary-color);
+}
 
 .prod-card {
     transition: all 0.2s ease;
 }
 
 .prod-card:hover {
-    transform: translateY(-5px);
     /* Efeito de 'levantar' */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
 }
@@ -286,9 +307,9 @@ section .categories {
     color: white;
 }
 
-footer{
+footer {
     background-color: #fff;
-    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -296,42 +317,52 @@ footer{
     width: 100%;
     background-color: #faf8f8;
 }
-.conteiner-footer{
+
+.conteiner-footer {
     display: flex;
     flex-direction: row !important;
     justify-content: space-around;
     align-items: center;
 }
-.footer-itens{
+
+.footer-itens {
     display: flex;
     flex-direction: column;
     gap: 2rem;
     flex-direction: column;
 }
-.footer-itens p{
+
+.footer-itens p {
     color: #818181;
 }
-.footer-itens h4{
+
+.footer-itens h4 {
     font-weight: 700;
 }
-.footer-itens div ul,li{
+
+.footer-itens div ul,
+li {
     list-style: none;
     padding: 0;
     color: #818181;
 }
-.footer-itens div ul li i{
+
+.footer-itens div ul li i {
     color: var(--secundary-color);
 }
-.footer-itens div ul li a{
+
+.footer-itens div ul li a {
     text-decoration: none;
     color: #818181;
 }
-.redersSociais{
+
+.redersSociais {
     display: flex;
     flex-direction: row;
     gap: 3rem;
 }
-.redesSociais a{
+
+.redesSociais a {
     background-color: #fff;
     color: black;
     border-radius: 50%;
@@ -339,14 +370,17 @@ footer{
     padding: 10px 12px;
     transition: all 0.6s ease;
 }
-.redesSociais a:hover{
+
+.redesSociais a:hover {
     background-color: var(--secundary-color);
     box-shadow: var(--secundary-color) 0px 2px 8px 0px;
     color: white;
 }
-.direitos{
+
+.direitos {
     text-align: center;
 }
+
 /*
   MELHORIA:
   Crie um NOVO arquivo 'login.css' e cole este conteúdo.

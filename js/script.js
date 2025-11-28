@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const inputPesquisa = document.getElementById('inputPesquisa');
 
     if (formPesquisa) {
-        formPesquisa.addEventListener('submit', function(event) {
+        formPesquisa.addEventListener('submit', function (event) {
             event.preventDefault();
             const termoBuscado = inputPesquisa.value;
             if (termoBuscado.trim() === "") {
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const inputPesquisaHero = document.getElementById('inputPesquisaHero');
 
     if (formPesquisaHero) {
-        formPesquisaHero.addEventListener('submit', function(event) {
+        formPesquisaHero.addEventListener('submit', function (event) {
             event.preventDefault();
             const termoBuscado = inputPesquisaHero.value;
             if (termoBuscado.trim() === "") {
@@ -71,8 +71,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // MUDANÇA: Delegação de Evento
     // Ouve cliques no documento inteiro
-    document.addEventListener('click', function(event) {
-        
+    document.addEventListener('click', function (event) {
+
         // Verifica se o alvo do clique foi um botão com a classe '.btn-prod'
         if (event.target.classList.contains('btn-prod')) {
             const botao = event.target;
@@ -104,18 +104,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // --- 5. SEÇÃO: INICIALIZAÇÃO DOS CARROSSÉIS DE PRODUTOS (NOVO) ---
-    
+
     // Inicializa o carrossel "Mais Vendidos"
-    new Swiper("#mais-vendidos-carousel", {
+    new Swiper("#produtos", {
         spaceBetween: 16, // Espaço entre os slides
         slidesPerView: 1.2, // Padrão mobile (mostra 1 e um pedaço do outro)
-        
+        // Melhoria: loop, autoplay e teclado
+        loop: true,
+        keyboard: {
+            enabled: true,
+            onlyInViewport: true,
+        },
         // Navegação (setas)
         navigation: {
             nextEl: "#mais-vendidos-next",
             prevEl: "#mais-vendidos-prev",
         },
-        
+
         // Responsividade (quantos slides mostrar por tamanho de tela)
         breakpoints: {
             576: { // sm
@@ -129,36 +134,45 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
-
-    // Inicializa o carrossel "Vitaminas"
-    new Swiper("#vitaminas-carousel", {
-        spaceBetween: 16,
-        slidesPerView: 1.2,
-        navigation: {
-            nextEl: "#vitaminas-next",
-            prevEl: "#vitaminas-prev",
-        },
-        breakpoints: {
-            576: { slidesPerView: 2.2 },
-            768: { slidesPerView: 3 },
-            992: { slidesPerView: 4 }
-        }
+    // Carrosel de produtos
+     new Swiper(".mySwiper", {
+      spaceBetween: 30,
+      centeredSlides: true,
+      autoplay: {
+        delay: 6500,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
     });
+    new Swiper("#myCat", {
+  slidesPerView: 3,  // desktop
+  spaceBetween: 20,
+  pagination: {
+    el: ".slider-pagination",
+    clickable: true,
+  },
 
-    // Inicializa o carrossel "Cuidados Pessoais"
-    new Swiper("#cuidados-pessoais-carousel", {
-        spaceBetween: 16,
-        slidesPerView: 1.2,
-        navigation: {
-            nextEl: "#cuidados-pessoais-next",
-            prevEl: "#cuidados-pessoais-prev",
-        },
-        breakpoints: {
-            576: { slidesPerView: 2.2 },
-            768: { slidesPerView: 3 },
-            992: { slidesPerView: 4 }
-        }
-    });
+  breakpoints: {
+    0: {
+      slidesPerView: 2.2,
+    },
+    480: {
+      slidesPerView: 3,
+    },
+    768: {
+      slidesPerView: 4,
+    },
+    992: {
+      slidesPerView: 6, // PC grande
+    }
+  }
+});
 
-    
 });

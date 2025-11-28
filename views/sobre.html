@@ -9,34 +9,47 @@
   
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../css/style.css">
   
 
 
 </head>
 <body class="sobre-page">
 
-  <header class="navbar navbar-expand-lg bg-white border-bottom sticky-top shadow-sm">
+  <body class="cadastro-body">
+    <header class="navbar navbar-expand-lg bg-white border-bottom sticky-top shadow-sm">
     <div class="container">
-      <a class="navbar-brand logo" href="index.html">FarmeFipp</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Abrir navegação">
-        <span class="navbar-toggler-icon"></span>
+      
+      <a class="navbar-brand logo" href="../index.html">FarmaFipp</a>
+
+      <button class="navbar-toggler border-0" type="button" 
+        data-bs-toggle="collapse" data-bs-target="#mainNav"
+        aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="bi bi-list fs-1 text-danger"></i>
       </button>
-      <div class="collapse navbar-collapse" id="mainNav">
-        <ul class="navbar-nav me-auto">
-          <li class="nav-item"><a class="nav-link" href="#">Descontos</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Perfumes</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Higiene</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Remédios</a></li>
-          <li class="nav-item"><a class="nav-link active" href="sobre.html">Sobre</a></li>
-        </ul>
-        <form class="d-flex pesquisa" role="search">
-          <input class="form-control me-2" type="search" placeholder="Busque medicamentos..." aria-label="Buscar">
-        </form>
-        <a href="#" class="btn btn-carrinho" role="button">
-           <i class="bi bi-cart3"></i>
-           <span class="d-none d-lg-inline ms-1">Carrinho</span>
+
+      <div class="collapse navbar-collapse d-flex gap-3" id="mainNav">
+
+        <ul class="navbar-nav me-auto"></ul>
+
+        <div class="nav-item">
+          <a href="sobre.html">Sobre</a>
+        </div>
+
+        <!-- BOTÃO MODIFICADO: agora abre o modal -->
+        <button class="btn btn-danger btn-login-nav" 
+                data-bs-toggle="modal" 
+                data-bs-target="#modalLogin">
+          <i class="bi bi-person-fill"></i>
+          <span class="d-none d-lg-inline ms-1">Login Ou Cadastre</span>
+        </button>
+
+        <a href="carrinho.html" class="btn btn-carrinho" role="button">
+          <i class="bi bi-cart3 fs-5"></i>
+          <span class="d-none d-lg-inline ms-1">Carrinho</span>
+          <span class="badge bg-danger rounded-pill ms-1" id="cart-count">0</span>
         </a>
+
       </div>
     </div>
   </header>
@@ -89,34 +102,50 @@
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="footer-bottom">
-      <p>Desenvolvido Por <span>RX CODERS</span></p>
-      <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})">Voltar ao topo</button>
+  <footer>
+    <div class="conteiner-footer">
+      <div class="footer-itens">
+        <div>
+          <h4 style="color: #ee0000;">FarmaFipp</h4>
+          <p>Sua farmácia online de confiança.</p>
+        </div>
+        <div>
+          <h4>Contato</h4>
+          <ul>
+            <li><i class="bi bi-telephone-fill"></i> (11) 98765-4321</li>
+            <li><i class="bi bi-envelope-fill"></i> contato@farmafipp.com</li>
+            <li><i class="bi bi-geo-alt-fill"></i> Rua Exemplo, 123, SP</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-itens">
+        <div>
+          <h4>Links Rápidos</h4>
+          <ul>
+            <li><a href="views/sobre.html">Sobre nós</a></li>
+            <li><a href="#">Produtos</a></li>
+            <li><a href="#">Promoções</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Redes Sociais</h4>
+          <div class="redesSociais">
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-twitter"></i></a>
+            <a href="#"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="direitos">
+      <hr>
+      <p>© 2024 FarmaFipp. Todos os direitos reservados.</p>
     </div>
   </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
-    /*
-  MELHORIA:
-  Crie um NOVO arquivo 'sobre.js' e cole este conteúdo.
-  JS nunca deve ficar inline no HTML se puder ser evitado.
-*/
-
-// Animação de seções ao rolar
-document.addEventListener('DOMContentLoaded', () => {
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('reveal');
-        }
-      });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('#main-sobre section').forEach(section => observer.observe(section));
-});
-  </script>
-  
-  <script src="sobre.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/script.js"></script>
 </body>
 </html>
