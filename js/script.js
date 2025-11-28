@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- 5. SEÇÃO: INICIALIZAÇÃO DOS CARROSSÉIS DE PRODUTOS (NOVO) ---
 
     // Inicializa o carrossel "Mais Vendidos"
-    new Swiper("#produtos", {
+    new Swiper("#Mais-vendidos", {
         spaceBetween: 16, // Espaço entre os slides
         slidesPerView: 1.2, // Padrão mobile (mostra 1 e um pedaço do outro)
         // Melhoria: loop, autoplay e teclado
@@ -119,6 +119,62 @@ document.addEventListener('DOMContentLoaded', () => {
         navigation: {
             nextEl: "#mais-vendidos-next",
             prevEl: "#mais-vendidos-prev",
+        },
+
+        // Responsividade (quantos slides mostrar por tamanho de tela)
+        breakpoints: {
+            576: { // sm
+                slidesPerView: 2.2,
+            },
+            768: { // md
+                slidesPerView: 3,
+            },
+            992: { // lg
+                slidesPerView: 4,
+            }
+        }
+    });
+    new Swiper("#Ofertas", {
+        spaceBetween: 16, // Espaço entre os slides
+        slidesPerView: 1.2, // Padrão mobile (mostra 1 e um pedaço do outro)
+        // Melhoria: loop, autoplay e teclado
+        loop: true,
+        keyboard: {
+            enabled: true,
+            onlyInViewport: true,
+        },
+        // Navegação (setas)
+        navigation: {
+            nextEl: "#ofertas-next",
+            prevEl: "#ofertas-prev",
+        },
+
+        // Responsividade (quantos slides mostrar por tamanho de tela)
+        breakpoints: {
+            576: { // sm
+                slidesPerView: 2.2,
+            },
+            768: { // md
+                slidesPerView: 3,
+            },
+            992: { // lg
+                slidesPerView: 4,
+            }
+        }
+    });
+    new Swiper("#marcas", {
+        spaceBetween: 16, // Espaço entre os slides
+        slidesPerView: 1.2, // Padrão mobile (mostra 1 e um pedaço do outro)
+        // Melhoria: loop, autoplay e teclado
+        loop: true,
+        keyboard: {
+            enabled: true,
+            onlyInViewport: true,
+        },
+        // Navegação (setas)
+        navigation: {
+            nextEl: "#marcas-next",
+            prevEl: "#marcas-prev",
         },
 
         // Responsividade (quantos slides mostrar por tamanho de tela)

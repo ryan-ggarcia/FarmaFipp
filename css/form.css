@@ -49,13 +49,20 @@ h1 {
 .input-style,
 #email {
     width: 100%;
-    padding: 12px;
+    padding: 11px;
     font-size: 1rem;
     border: 1px solid #ccc;
     border-radius: 0 8px 8px 0;
     outline: none;
 }
-
+#gender{
+    width: 100%;
+    padding: 12.5px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0 8px 8px 0;
+    outline: none;
+}
 .input-style:focus,
 #email:focus {
     border-color: var(--primary-color);

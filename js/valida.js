@@ -121,6 +121,7 @@ function exibiErro(obj, mensagem) {
 	let textErro = parent.querySelector('.message-error')
 	obj.className = "input-style msg-false"
 	mensagemErro.style.display = "flex"
+	obj.style.border = "red 1px solid"
 	textErro.innerHTML = mensagem
 	formularioValidado = false
 }
@@ -133,6 +134,7 @@ function exibiSucess(obj) {
 	let textSucces = parent.querySelector('.message-true')
 	textSucces.innerHTML = "Campo preenchido corretamente!"
 	obj.className = "input-style msg-true"
+	obj.style.border = "#2ecc71 1px solid"
 	mensagemTrue.style.display = "flex"
 	mensagemErro.style.display = "none"
 	formularioValidado = true
