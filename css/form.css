@@ -1,3 +1,6 @@
+@import url('https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-straight/css/uicons-regular-straight.css');
+@import url('https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css');
+
 body.cadastro-body {
     background: linear-gradient(to right, #e3f2fd, #fce4ec);
     overflow-x: hidden;
@@ -15,12 +18,13 @@ h1 {
     font-weight: 700;
 }
 
-.conteiner {
+.conteiner,
+.modal-controller {
     width: 100%;
     padding: 20px;
     background: #fff;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .form-documents {
@@ -55,7 +59,8 @@ h1 {
     border-radius: 0 8px 8px 0;
     outline: none;
 }
-#gender{
+
+#gender {
     width: 100%;
     padding: 12.5px;
     font-size: 1rem;
@@ -63,19 +68,37 @@ h1 {
     border-radius: 0 8px 8px 0;
     outline: none;
 }
+
 .input-style:focus,
 #email:focus {
     border-color: var(--primary-color);
-    box-shadow: 0 0 5px rgba(0,0,0,0.15);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
 }
 
-.error, .sucess {
+.error,
+.sucess {
     display: none;
     font-size: 14px;
 }
 
-.message-error { color: red; }
-.message-true { color: #2ecc71; }
+.message-error {
+    color: red;
+}
+
+.message-true {
+    color: #2ecc71;
+}
+
+.btn-excluirLinha,
+.btn-alterar {
+    padding: 5px 10px;
+    color: red;
+    font-size: 20px;
+}
+
+.btn-alterar {
+    color: #f39c12;
+}
 
 .btn-primary {
     padding: 10px 18px;
@@ -86,11 +109,35 @@ h1 {
     padding: 10px 18px;
     font-weight: 600;
 }
-.icon-error{
+
+.icon-error {
     color: red;
     margin-right: 7px;
 }
-.icons-true{
+
+.icons-true {
     color: #2ecc71;
     margin-right: 7px;
+}
+
+#modal-alterar {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 15px;
+}
+
+.modal-controller {
+    max-width: 900px;
+}
+
+table {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    height: 100%;
 }
